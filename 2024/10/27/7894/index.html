@@ -19,29 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;3273 n개의 서로 다른 양의 정수 $a_1, a_2, …, a_n$으로 이루어진 수열이 있다. $a_i$의 값은 1보다 크거나 같고, 1000000보다 작거나 같은 자연수이다. 자연수 $x$가 주어졌을 때, $a_i + a_j &#x3D; x$ $(1 ≤ i &lt; j ≤ n)">
+    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오. 풀이 및 구현주어진 정수 $m$의 범위가 $(1 \leq m \l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[백준] 3273 두 수의 합 (C++)">
-<meta property="og:url" content="https://ch2mi.github.io/2024/10/19/3273/index.html">
+<meta property="og:title" content="[백준] 7894 큰 수 (C++)">
+<meta property="og:url" content="https://ch2mi.github.io/2024/10/27/7894/index.html">
 <meta property="og:site_name" content="CH2MI LOG">
-<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;3273 n개의 서로 다른 양의 정수 $a_1, a_2, …, a_n$으로 이루어진 수열이 있다. $a_i$의 값은 1보다 크거나 같고, 1000000보다 작거나 같은 자연수이다. 자연수 $x$가 주어졌을 때, $a_i + a_j &#x3D; x$ $(1 ≤ i &lt; j ≤ n)">
+<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오. 풀이 및 구현주어진 정수 $m$의 범위가 $(1 \leq m \l">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="https://ch2mi.github.io/image/3273/1.png">
-<meta property="article:published_time" content="2024-10-19T09:12:20.000Z">
-<meta property="article:modified_time" content="2024-10-19T09:35:59.701Z">
+<meta property="og:image" content="https://ch2mi.github.io/image/7894/1.png">
+<meta property="article:published_time" content="2024-10-27T08:04:14.000Z">
+<meta property="article:modified_time" content="2024-10-27T08:04:47.531Z">
 <meta property="article:author" content="CH2MI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ch2mi.github.io/image/3273/1.png">
+<meta name="twitter:image" content="https://ch2mi.github.io/image/7894/1.png">
 
 
-<link rel="canonical" href="https://ch2mi.github.io/2024/10/19/3273/">
+<link rel="canonical" href="https://ch2mi.github.io/2024/10/27/7894/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2024/10/19/3273/","path":"2024/10/19/3273/","title":"[백준] 3273 두 수의 합 (C++)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2024/10/27/7894/","path":"2024/10/27/7894/","title":"[백준] 7894 큰 수 (C++)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[백준] 3273 두 수의 합 (C++) | CH2MI LOG</title>
+<title>[백준] 7894 큰 수 (C++) | CH2MI LOG</title>
   
 
 
@@ -164,7 +164,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/10/19/3273/">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/10/27/7894/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,12 +177,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[백준] 3273 두 수의 합 (C++) | CH2MI LOG">
+      <meta itemprop="name" content="[백준] 7894 큰 수 (C++) | CH2MI LOG">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [백준] 3273 두 수의 합 (C++)
+          [백준] 7894 큰 수 (C++)
         </h1>
 
         <div class="post-meta-container">
@@ -194,7 +194,7 @@
       <span class="post-meta-item-text">작성일</span>
       
 
-      <time title="Post created: 2024-10-19 18:12:20 / Updated at: 18:35:59" itemprop="dateCreated datePublished" datetime="2024-10-19T18:12:20+09:00">2024-10-19</time>
+      <time title="Post created: 2024-10-27 17:04:14 / Updated at: 17:04:47" itemprop="dateCreated datePublished" datetime="2024-10-27T17:04:14+09:00">2024-10-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -215,19 +215,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/3273">https://www.acmicpc.net/problem/3273</a></p>
-<p>n개의 서로 다른 양의 정수 $a_1, a_2, …, a_n$으로 이루어진 수열이 있다. $a_i$의 값은 1보다 크거나 같고, 1000000보다 작거나 같은 자연수이다. 자연수 $x$가 주어졌을 때, $a_i + a_j &#x3D; x$ $(1 ≤ i &lt; j ≤ n)$을 만족하는 $(a_i, a_j)$쌍의 수를 구하는 프로그램을 작성하시오.</p>
-<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>문제를 풀기 위해 투 포인터 알고리즘을 사용했다.</p>
-<p>문제에서 주어진 수열을 우선 오름차순으로 정렬한다.<br>$$5, 12, 7, 10, 9, 1, 2, 3, 11 \rightarrow 1, 2, 3, 5, 7, 9, 10, 11, 12$$<br>수열의 왼쪽 끝을 가르키는 $l$과 수열의 오른쪽 끝을 가르키는 $r$을 만든다.</p>
-<p>두 인덱스가 가르키는 원소를 더했을 때 나올 수 있는 경우의 수는 아래와 같다.</p>
-<p>$$1. v[l] + v[r] &lt; x$$<br>$$2. v[l] + v[r] &gt; x$$<br>$$3. v[l] + v[r] &#x3D; x$$</p>
-<p>1번은 현재 목표 값보다 합이 작기 때문에 $l$포인터를 증가시켜 합을 크게 만든다.</p>
-<p>2번은 현재 목표 값보다 합이 크기 때문에 $r$포인터를 감소시켜 합을 작게 만든다.</p>
-<p>3번일 때 현재 목표 값과 동일하므로 $(a_i, a_j)$에 추가한다.<br>이 때 수열의 값은 모두 다르기 때문에 $v[l]$과 $v[r]$ 둘 중 하나를 이용해서 새롭게 $x$를 만들어 낼 수 없다.<br>그러므로 $l$포인터는 증가시키고 $r$포인터는 감소시켜 새로운 순서쌍을 찾을 수 있게 한다.</p>
-<p>위 과정을 $l$포인터가 $r$포인터보다 작을 때까지 반복하면서 순서쌍의 개수를 세주면 문제를 해결할 수 있다.</p>
-<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span>  </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span>  </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span>  </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;  </span><br><span class="line">   </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);  </span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>); cout.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);  </span><br><span class="line">   </span><br><span class="line">    <span class="type">int</span> n, x;  </span><br><span class="line">    cin &gt;&gt; n;  </span><br><span class="line">   </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n)</span></span>;  </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i : v) cin &gt;&gt; i;  </span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());  </span><br><span class="line">    cin &gt;&gt; x;  </span><br><span class="line">   </span><br><span class="line">    <span class="type">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>, cnt = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;  </span><br><span class="line">        <span class="type">int</span> sum = v[l] + v[r];  </span><br><span class="line">        <span class="keyword">if</span> (sum &lt;= x) l++;  </span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= x) r--;  </span><br><span class="line">        <span class="keyword">if</span> (sum == x) cnt++;  </span><br><span class="line">    &#125;  </span><br><span class="line">    cout &lt;&lt; cnt;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/7894">https://www.acmicpc.net/problem/7894</a></p>
+<p>많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다.</p>
+<p>수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.</p>
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>주어진 정수 $m$의 범위가 $(1 \leq m \leq 10^7)$ 이므로 그대로 $m!$을 구하기엔 무리가 있다.</p>
+<p>그래서 사용한 것이 로그이다. </p>
+<p>$\log(a)$는 $a$를 만들기 위한 10의 지수 값을 물어보는 것인데, 이때 지수 값은 곧 자리수와 연관이 있다.</p>
+<p>100으로 예를 들어보면 $\log(100) &#x3D; 2$이고 100의 자리수는 총 3자리이다. </p>
+<p>또한 954도 계산해보면 $\log(954) &#x3D; 2.9795…$이고 954의 자리수는 총 3자리이다.</p>
+<p>즉 계산한 결과에 로그를 취해서 소수점을 절사한다음 1을 더해주면 자리수가 나오는 것이다.</p>
+<p>$$m! &#x3D; m * (m - 1) * (m - 2) * … * 2 * 1$$</p>
+<p>위 식에 로그를 취하면 로그의 성질에 의해 곱셈이 덧셈으로 분리된다. 따라서 아래와 같은 식으로 변한다.</p>
+<p>$$\log(m!) &#x3D; \log(m) + \log(m - 1) + \log(m - 2) + … + log(2) + log(1)$$</p>
+<p>자리수는 1~m까지의 각각의 로그값의 합의 소숫점을 절사한 뒤 1을 더해주면 얻을 수 있다.</p>
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>); cout.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">        </span><br><span class="line">        <span class="type">double</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= N; i++) &#123;</span><br><span class="line">            count += <span class="built_in">log10</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        count += <span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; (<span class="type">int</span>)count &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/3273/1.png"><br>바로 먼저 투 포인터가 생각나서 투 포인터로 풀었다.<br>이외에도 이분 탐색을 사용해서 풀 수도 있을 것이고<br>$a_i$의 범위가 $1\leq a_i \leq 1000000$이므로 $a_i$에 대해 $x-a_i$가 존재하는지 찾아본다면<br>정렬이 필요하지 않으므로 $O(n)$으로도 풀 수 있을 것이다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/7894/1.png"><br>오차때매 틀릴 것 같아서 걱정했었는데 다행히 AC를 받을 수 있었다.</p>
 
     </div>
 
@@ -241,14 +244,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/10/19/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-angle-left"></i> Hello World
+                <a href="/2024/10/19/3273/" rel="prev" title="[백준] 3273 두 수의 합 (C++)">
+                  <i class="fa fa-angle-left"></i> [백준] 3273 두 수의 합 (C++)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/10/27/7894/" rel="next" title="[백준] 7894 큰 수 (C++)">
-                  [백준] 7894 큰 수 (C++) <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

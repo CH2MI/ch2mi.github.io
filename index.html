@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -130,6 +130,11 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ch2mi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch2mi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
         </div>
       </div>
@@ -142,6 +147,100 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/10/27/7894/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/10/27/7894/" class="post-title-link" itemprop="url">[백준] 7894 큰 수 (C++)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2024-10-27 17:04:14 / Updated at: 17:04:47" itemprop="dateCreated datePublished" datetime="2024-10-27T17:04:14+09:00">2024-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/7894">https://www.acmicpc.net/problem/7894</a></p>
+<p>많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다.</p>
+<p>수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.</p>
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>주어진 정수 $m$의 범위가 $(1 \leq m \leq 10^7)$ 이므로 그대로 $m!$을 구하기엔 무리가 있다.</p>
+<p>그래서 사용한 것이 로그이다. </p>
+<p>$\log(a)$는 $a$를 만들기 위한 10의 지수 값을 물어보는 것인데, 이때 지수 값은 곧 자리수와 연관이 있다.</p>
+<p>100으로 예를 들어보면 $\log(100) &#x3D; 2$이고 100의 자리수는 총 3자리이다. </p>
+<p>또한 954도 계산해보면 $\log(954) &#x3D; 2.9795…$이고 954의 자리수는 총 3자리이다.</p>
+<p>즉 계산한 결과에 로그를 취해서 소수점을 절사한다음 1을 더해주면 자리수가 나오는 것이다.</p>
+<p>$$m! &#x3D; m * (m - 1) * (m - 2) * … * 2 * 1$$</p>
+<p>위 식에 로그를 취하면 로그의 성질에 의해 곱셈이 덧셈으로 분리된다. 따라서 아래와 같은 식으로 변한다.</p>
+<p>$$\log(m!) &#x3D; \log(m) + \log(m - 1) + \log(m - 2) + … + log(2) + log(1)$$</p>
+<p>자리수는 1~m까지의 각각의 로그값의 합의 소숫점을 절사한 뒤 1을 더해주면 얻을 수 있다.</p>
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>); cout.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">        </span><br><span class="line">        <span class="type">double</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= N; i++) &#123;</span><br><span class="line">            count += <span class="built_in">log10</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        count += <span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; (<span class="type">int</span>)count &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/7894/1.png"><br>오차때매 틀릴 것 같아서 걱정했었는데 다행히 AC를 받을 수 있었다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -169,7 +268,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/19/3273/" class="post-title-link" itemprop="url">3273 두 수의 합</a>
+          <a href="/2024/10/19/3273/" class="post-title-link" itemprop="url">[백준] 3273 두 수의 합 (C++)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -181,7 +280,7 @@
       <span class="post-meta-item-text">작성일</span>
       
 
-      <time title="Post created: 2024-10-19 18:12:20 / Updated at: 18:27:05" itemprop="dateCreated datePublished" datetime="2024-10-19T18:12:20+09:00">2024-10-19</time>
+      <time title="Post created: 2024-10-19 18:12:20 / Updated at: 18:35:59" itemprop="dateCreated datePublished" datetime="2024-10-19T18:12:20+09:00">2024-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
