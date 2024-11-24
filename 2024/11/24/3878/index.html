@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;3878 평면 위에 여러 개의 검정 점과 흰 점이 있다. 이때, 길이가 무한대인 직선을 그어 흰 점과 검은 점을 분리하려고 한다. 직선은 어떤 점과도 만나면 안 된다. 직선으로 인해서 나누어지는 두 그룹 중 한 그룹에는 흰 점만 있어야 하고, 다른 그룹에는 검은 점만 있어야 한다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[백준] 3878 점 분리 (C++)">
+<meta property="og:url" content="https://ch2mi.github.io/2024/11/24/3878/index.html">
+<meta property="og:site_name" content="CH2MI LOG">
+<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;3878 평면 위에 여러 개의 검정 점과 흰 점이 있다. 이때, 길이가 무한대인 직선을 그어 흰 점과 검은 점을 분리하려고 한다. 직선은 어떤 점과도 만나면 안 된다. 직선으로 인해서 나누어지는 두 그룹 중 한 그룹에는 흰 점만 있어야 하고, 다른 그룹에는 검은 점만 있어야 한다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://ch2mi.github.io/image/3878/ex1.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/3878/1.png">
+<meta property="article:published_time" content="2024-11-24T09:12:20.000Z">
+<meta property="article:modified_time" content="2024-11-24T14:50:45.995Z">
+<meta property="article:author" content="CH2MI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ch2mi.github.io/image/3878/ex1.png">
+
+
+<link rel="canonical" href="https://ch2mi.github.io/2024/11/24/3878/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2024/11/24/3878/","path":"2024/11/24/3878/","title":"[백준] 3878 점 분리 (C++)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[백준] 3878 점 분리 (C++) | CH2MI LOG</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">CH2MI LOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="검색" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">문제</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%92%80%EC%9D%B4-%EB%B0%8F-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text">풀이 및 구현</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%BD%94%EB%93%9C"><span class="nav-number">3.</span> <span class="nav-text">코드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">4.</span> <span class="nav-text">후기</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">CH2MI</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ch2mi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch2mi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/11/24/3878/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[백준] 3878 점 분리 (C++) | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [백준] 3878 점 분리 (C++)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2024-11-24 18:12:20 / Updated at: 23:50:45" itemprop="dateCreated datePublished" datetime="2024-11-24T18:12:20+09:00">2024-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/3878">https://www.acmicpc.net/problem/3878</a></p>
+<p>평면 위에 여러 개의 검정 점과 흰 점이 있다. 이때, 길이가 무한대인 직선을 그어 흰 점과 검은 점을 분리하려고 한다. 직선은 어떤 점과도 만나면 안 된다. 직선으로 인해서 나누어지는 두 그룹 중 한 그룹에는 흰 점만 있어야 하고, 다른 그룹에는 검은 점만 있어야 한다.</p>
+<p>아래 그림에서 제일 왼쪽 예제는 점선으로 표시된 직선으로 두 점을 나눌 수 있다. 하지만 나머지 예제는 직선으로 점을 분리할 수 없다.</p>
+<p><img src="/image/3878/ex1.png"></p>
+<p>흰 점과 검은 점의 좌표가 주어졌을 때, 직선으로 점을 분리할 수 있는지 없는지를 알아내는 프로그램을 작성하시오.</p>
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>흰 점과 검은 점을 직선을 통해 분리하기 위해선 두 점의 집합이 서로 겹친 부분이 있는지 확인해야 한다.</p>
+<p>두 점의 집합이 서로 겹치는 부분이 존재하거나, 한 집합이 다른 집합 안에 포함되어 있다면 직선을 통해 분리 할 수 없고, 두 집합이 겹쳐 있지 않을 때만 직선으로 분리할 수 있다.</p>
+<p>그러면 두 집합의 경계를 정해야 하는데 이를 위해 컨벡스 헐 알고리즘을 사용했다.</p>
+<p>흰 점과 검은 점에 대해 각각의 컨벡스 헐을 구하면 흰 점의 컨벡스 헐 내부에는 모든 흰 점이 존재하고, 검은 점의 컨벡스 헐 내부에는 모든 검은 점이 존재한다. </p>
+<p>즉 컨벡스 헐이 집합의 경계를 의미하기 때문에 두 컨벡스헐이 교차하는지 검사하면 직선을 통해 분리할 수 있는지 없는지 확인 할 수 있다.</p>
+<p>컨벡스 헐을 만드는 알고리즘은 그라함 스캔 방식을 이용했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;point&gt; <span class="title">ConvexHull</span><span class="params">(vector&lt;point&gt;&amp; v)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, v.<span class="built_in">end</span>(), [&amp;](point&amp; a, point&amp; b) &#123;</span><br><span class="line">        <span class="type">int</span> ccw = <span class="built_in">CCW</span>(v[<span class="number">0</span>], a, b);</span><br><span class="line">        <span class="keyword">if</span> (!ccw) <span class="keyword">return</span> <span class="built_in">dist</span>(v[<span class="number">0</span>], a) &lt; <span class="built_in">dist</span>(v[<span class="number">0</span>], b);</span><br><span class="line">        <span class="keyword">return</span> ccw &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; (<span class="type">int</span>)v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (st.<span class="built_in">size</span>() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(i);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> a = st.<span class="built_in">top</span>(); st.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = st.<span class="built_in">top</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">CCW</span>(v[b], v[a], v[i]) &gt; <span class="number">0</span>) st.<span class="built_in">push</span>(a), st.<span class="built_in">push</span>(i);</span><br><span class="line">        <span class="keyword">else</span> i--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">c</span><span class="params">(st.size())</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : c) p = v[st.<span class="built_in">top</span>()], st.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>흰 점과 검은 점의 컨벡스 헐을 구한 다음엔 완전 탐색을 통해 두 컨벡스 헐의 변이 서로 교차하는 지 확인했다. 만약 어떤 두 변이 교차한다면 두 집합이 겹치는 부분이 있다는 뜻이므로 직선으로 분리할 수 없다는 의미가 된다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;point&gt; bc = <span class="built_in">ConvexHull</span>(black), wc = <span class="built_in">ConvexHull</span>(white);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 두 컨벡스 헐이 교차하는지 판정</span></span><br><span class="line"><span class="type">int</span> bl = (<span class="type">int</span>)bc.<span class="built_in">size</span>(), wl = (<span class="type">int</span>)wc.<span class="built_in">size</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; bl; i++) &#123;</span><br><span class="line">    point p1 = bc[i], p2 = bc[(i + <span class="number">1</span>) % bl];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; wl; j++) &#123;</span><br><span class="line">        point p3 = wc[j], p4 = wc[(j + <span class="number">1</span>) % wl];</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">intersect</span>(p1, p2, p3, p4)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>교차 판정을 위해 선분 교차 문제에 사용한 알고리즘을 이용했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">intersect</span><span class="params">(point&amp; a, point&amp; b, point&amp; c, point&amp; d)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ab = <span class="built_in">CCW</span>(a, b, c) * <span class="built_in">CCW</span>(a, b, d);</span><br><span class="line">    <span class="type">int</span> cd = <span class="built_in">CCW</span>(c, d, a) * <span class="built_in">CCW</span>(c, d, b);</span><br><span class="line">    <span class="keyword">if</span> (!ab &amp;&amp; !cd) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; b) <span class="built_in">swap</span>(a, b);</span><br><span class="line">        <span class="keyword">if</span> (c &gt; d) <span class="built_in">swap</span>(c, d);</span><br><span class="line">        <span class="keyword">return</span> a &lt;= d &amp;&amp; c &lt;= b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ab &lt;= <span class="number">0</span> &amp;&amp; cd &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>만약 한 컨벡스 헐이 다른 컨벡스 헐에 포함되어 있다면 변이 서로 교차하지 않기 때문에 교차만으로는 확인할 수 없다.</p>
+<p>따라서 두 컨벡스 헐을 구성하는 점들을 합쳐 새로운 컨벡스 헐을 구성해보았다.</p>
+<p>이때 새롭게 만들어지는 컨벡스 헐이 기존 두 컨벡스 헐 중 겹치는 컨벡스 헐이 있다면 두 컨벡스 헐은 포함 관계가 되기 때문에 직선으로 분리할 수가 없다.</p>
+<p>따라서 새로운 컨벡스 헐이 만들어졌다면 두 집합은 완전히 분리가 되어 있다는 의미이기 때문에 직선으로 분리할 수 있다고 판정할 수 있다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 두 컨벡스 헐로 새로운 컨벡스 헐을 만든다.</span></span><br><span class="line"><span class="function">vector&lt;point&gt; <span class="title">sum</span><span class="params">(bc)</span></span>;</span><br><span class="line">sum.<span class="built_in">insert</span>(sum.<span class="built_in">end</span>(), wc.<span class="built_in">begin</span>(), wc.<span class="built_in">end</span>());</span><br><span class="line">vector&lt;point&gt; sumc = <span class="built_in">ConvexHull</span>(sum);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (sumc != bc &amp;&amp; sumc != wc);</span><br></pre></td></tr></table></figure>
+
+<p>흰 점과 검은 점이 각각 100개 이하이기 때문에 위와 같은 방식으로 분리할 수 있는지 검사를 해도 시간이 충분하다.</p>
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, ll&gt; point;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CCW</span><span class="params">(point&amp; a, point&amp; b, point&amp; c)</span> </span>&#123;</span><br><span class="line">    ll ans = a.x * b.y + b.x * c.y + c.x * a.y - (b.x * a.y + c.x * b.y + a.x * c.y);</span><br><span class="line">    <span class="keyword">if</span> (ans &gt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (ans &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">dist</span><span class="params">(point&amp; a, point&amp; b)</span> </span>&#123;</span><br><span class="line">    ll dx = b.x - a.x, dy = b.y - a.y;</span><br><span class="line">    <span class="keyword">return</span> (dx * dx + dy * dy);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;point&gt; <span class="title">ConvexHull</span><span class="params">(vector&lt;point&gt;&amp; v)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, v.<span class="built_in">end</span>(), [&amp;](point&amp; a, point&amp; b) &#123;</span><br><span class="line">        <span class="type">int</span> ccw = <span class="built_in">CCW</span>(v[<span class="number">0</span>], a, b);</span><br><span class="line">        <span class="keyword">if</span> (!ccw) <span class="keyword">return</span> <span class="built_in">dist</span>(v[<span class="number">0</span>], a) &lt; <span class="built_in">dist</span>(v[<span class="number">0</span>], b);</span><br><span class="line">        <span class="keyword">return</span> ccw &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; (<span class="type">int</span>)v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (st.<span class="built_in">size</span>() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(i);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> a = st.<span class="built_in">top</span>(); st.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = st.<span class="built_in">top</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">CCW</span>(v[b], v[a], v[i]) &gt; <span class="number">0</span>) st.<span class="built_in">push</span>(a), st.<span class="built_in">push</span>(i);</span><br><span class="line">        <span class="keyword">else</span> i--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">c</span><span class="params">(st.size())</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : c) p = v[st.<span class="built_in">top</span>()], st.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">intersect</span><span class="params">(point&amp; a, point&amp; b, point&amp; c, point&amp; d)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ab = <span class="built_in">CCW</span>(a, b, c) * <span class="built_in">CCW</span>(a, b, d);</span><br><span class="line">    <span class="type">int</span> cd = <span class="built_in">CCW</span>(c, d, a) * <span class="built_in">CCW</span>(c, d, b);</span><br><span class="line">    <span class="keyword">if</span> (!ab &amp;&amp; !cd) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; b) <span class="built_in">swap</span>(a, b);</span><br><span class="line">        <span class="keyword">if</span> (c &gt; d) <span class="built_in">swap</span>(c, d);</span><br><span class="line">        <span class="keyword">return</span> a &lt;= d &amp;&amp; c &lt;= b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ab &lt;= <span class="number">0</span> &amp;&amp; cd &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">separate</span><span class="params">(vector&lt;point&gt;&amp; black, vector&lt;point&gt;&amp; white)</span> </span>&#123;</span><br><span class="line">    vector&lt;point&gt; bc = <span class="built_in">ConvexHull</span>(black), wc = <span class="built_in">ConvexHull</span>(white);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 두 컨벡스 헐이 교차하는지 판정</span></span><br><span class="line">    <span class="type">int</span> bl = (<span class="type">int</span>)bc.<span class="built_in">size</span>(), wl = (<span class="type">int</span>)wc.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; bl; i++) &#123;</span><br><span class="line">        point p1 = bc[i], p2 = bc[(i + <span class="number">1</span>) % bl];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; wl; j++) &#123;</span><br><span class="line">            point p3 = wc[j], p4 = wc[(j + <span class="number">1</span>) % wl];</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">intersect</span>(p1, p2, p3, p4)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 두 컨벡스 헐로 새로운 컨벡스 헐을 만든다.</span></span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">sum</span><span class="params">(bc)</span></span>;</span><br><span class="line">    sum.<span class="built_in">insert</span>(sum.<span class="built_in">end</span>(), wc.<span class="built_in">begin</span>(), wc.<span class="built_in">end</span>());</span><br><span class="line">    vector&lt;point&gt; sumc = <span class="built_in">ConvexHull</span>(sum);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> (sumc != bc &amp;&amp; sumc != wc);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> n, m; cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        <span class="function">vector&lt;point&gt; <span class="title">black</span><span class="params">(n)</span>, <span class="title">white</span><span class="params">(m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; [x, y] : black) cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; [x, y] : white) cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">separate</span>(black, white)) cout &lt;&lt; <span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;NO\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/3878/1.png" alt="alt text"></p>
+<p>처음 제출할 땐 새로운 컨벡스 헐을 만들고 나서 완전히 일치하지 않을까봐 아래와 같이 정렬을 다시 하고 검사했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(bc.<span class="built_in">begin</span>(), bc.<span class="built_in">end</span>());</span><br><span class="line"><span class="built_in">sort</span>(wc.<span class="built_in">begin</span>(), wc.<span class="built_in">end</span>());</span><br><span class="line"><span class="built_in">sort</span>(sumc.<span class="built_in">begin</span>(), sumc.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">return</span> (sumc != bc &amp;&amp; sumc != wc);</span><br></pre></td></tr></table></figure>
+
+<p>곰곰히 생각해 봤을 때 컨벡스 헐을 만들 때 $x_{min}$을 기준으로 반시계 방향으로 돌아가면서 컨벡스 헐을 구성하기 때문에 정렬을 하지 않을 것이라 생각해 다시 제출했고 동일하다는 것을 확인할 수 있었다.</p>
+<p>또한 정답을 맞춘 후 태그를 보니 “볼록 다각형 내부의 점 판정”이 따로 있는 것을 보아 관련 알고리즘도 공부해야겠다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/11/18/codeforces-988/" rel="prev" title="[Codeforces] Codeforces Round 988 (Div. 3) 후기">
+                  <i class="fa fa-angle-left"></i> [Codeforces] Codeforces Round 988 (Div. 3) 후기
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">CH2MI</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
