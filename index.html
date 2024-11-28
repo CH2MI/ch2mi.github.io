@@ -119,14 +119,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">태그</span>
       </div>
   </nav>
 </div>
@@ -147,6 +151,106 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/11/28/16973/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/11/28/16973/" class="post-title-link" itemprop="url">[백준] 16973 직사각형 탈출 (C++)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2024-11-28 17:04:14 / Updated at: 17:19:07" itemprop="dateCreated datePublished" datetime="2024-11-28T17:04:14+09:00">2024-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/16973">https://www.acmicpc.net/problem/16973</a></p>
+<p>크기가 N×M인 격자판에 크기가 H×W인 직사각형이 놓여 있다. 격자판은 크기가 1×1인 칸으로 나누어져 있다. 격자판의 가장 왼쪽 위 칸은 (1, 1), 가장 오른쪽 아래 칸은 (N, M)이다. 직사각형의 가장 왼쪽 위칸은 $(S_r, S_c)$에 있을 때, 이 직사각형의 가장 왼쪽 위칸을 $(F_r, F_c)$로 이동시키기 위한 최소 이동 횟수를 구해보자.</p>
+<p>격자판의 각 칸에는 빈 칸 또는 벽이 있다. 직사각형은 벽이 있는 칸에 있을 수 없다. 또한, 직사각형은 격자판을 벗어날 수 없다.</p>
+<p>직사각형은 한 번에 왼쪽, 오른쪽, 위, 아래 중 한 방향으로 한 칸 이동시킬 수 있다.</p>
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>예제 1번으로 예를 들어보자.</p>
+<p> 크기가 HxW인 직사각형을 빨간색 사각형이라고 한다면, 빨간색 사각형의 위치를 왼쪽 그림에서 오른쪽 그림으로 이동해야 한다.<br><img src="/image/16973/ex1.png" alt="alt text"></p>
+<p>이때 중간에 있는 검은색 사각형이 벽이기 때문에 빨간색 사각형을 오른쪽으로 밀어서 이동할 수 없고 그림과 같이 아래로 돌아가야 한다.<br><img src="/image/16973/ex2.png" alt="alt text"></p>
+<p>따라서 총 이동 횟수는 7번이 된다.</p>
+<p>직사각형의 이동 방향에 벽이 없거나, 격자판을 벗어나지 않을 때만 직사각형을 움직여준다면 BFS로 간단하게 해결할 수 있다.</p>
+<p><img src="/image/16973/ex3.png" alt="alt text"></p>
+<p>위의 그림과 같이 이동하려는 방향에 따라 파란색 부분이 격자판을 벗어나지 않고, 전부 0일 때 아래 ismovable 함수에서 true를 반환해주었다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ismovable</span><span class="params">(<span class="type">int</span> d, <span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 위</span></span><br><span class="line">    <span class="keyword">if</span> (d == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x - <span class="number">1</span> &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; W; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x - <span class="number">1</span>][y + i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 오른쪽</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (d == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y + W &gt;= M) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; H; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x + i][y + W]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 아래</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (d == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x + H &gt;= N) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; W; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x + H][y + i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (y - <span class="number">1</span> &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; H; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x + i][y - <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>직사각형의 위치는 왼쪽 상단 모서리의 점을 유지해주면서 해당 방향으로 이동 가능하고, 아직 방문하지 않은 지점들에 대해 모두 탐색한다면<br>시간복잡도는 $O((N - H) * (M - W) * max(H, W))$이고, 제한시간이 2초이기 때문에 시간 내에 해결할 수 있다.</p>
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tuple&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dx[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> dy[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> N, M, W, H, sx, sy, fx, fy;</span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; board;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ismovable</span><span class="params">(<span class="type">int</span> d, <span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 위</span></span><br><span class="line">    <span class="keyword">if</span> (d == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x - <span class="number">1</span> &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; W; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x - <span class="number">1</span>][y + i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 오른쪽</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (d == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y + W &gt;= M) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; H; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x + i][y + W]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 아래</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (d == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x + H &gt;= N) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; W; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x + H][y + i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (y - <span class="number">1</span> &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; H; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (board[x + i][y - <span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">BFS</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;tuple&lt;<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>&gt;&gt; q;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">visited</span>(N, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(M));</span><br><span class="line">    q.<span class="built_in">push</span>(&#123;sx - <span class="number">1</span>, sy - <span class="number">1</span>, <span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">auto</span>[x, y, cnt] = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (x == fx - <span class="number">1</span> &amp;&amp; y == fy - <span class="number">1</span>) <span class="keyword">return</span> cnt;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">ismovable</span>(k, x, y)) &#123;</span><br><span class="line">                <span class="type">int</span> i = x + dx[k];</span><br><span class="line">                <span class="type">int</span> j = y + dy[k];</span><br><span class="line">                <span class="keyword">if</span> (!visited[i][j]) &#123;</span><br><span class="line">                    visited[i][j] = <span class="number">1</span>;</span><br><span class="line">                    q.<span class="built_in">push</span>(&#123;i, j, cnt + <span class="number">1</span>&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    cin &gt;&gt; N &gt;&gt; M;</span><br><span class="line">    board.<span class="built_in">assign</span>(N, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(M));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i : board) <span class="keyword">for</span> (<span class="type">int</span>&amp; j : i) cin &gt;&gt; j;</span><br><span class="line">    cin &gt;&gt; H &gt;&gt; W &gt;&gt; sx &gt;&gt; sy &gt;&gt; fx &gt;&gt; fy;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="built_in">BFS</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/16973/1.png" alt="alt text"></p>
+<p>보통 BFS를 할 때 점을 이동시키는 문제들은 많이 풀어봤었는데 도형을 이동시키는 문제는 잘 안풀어봤던 것 같다. 이동 방향에 벽이 있는지 검사를 구현할 때 조심한다면 무난한 BFS문제라고 생각한다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -184,9 +288,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2024-11-24 18:12:20 / Updated at: 23:52:59" itemprop="dateCreated datePublished" datetime="2024-11-24T18:12:20+09:00">2024-11-24</time>
+      <time title="Post created: 2024-11-24 18:12:20" itemprop="dateCreated datePublished" datetime="2024-11-24T18:12:20+09:00">2024-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2024-11-28 17:17:37" itemprop="dateModified" datetime="2024-11-28T17:17:37+09:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -195,6 +305,10 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
         </span>
     </span>
 
@@ -296,9 +410,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2024-11-18 15:29:56 / Updated at: 18:33:58" itemprop="dateCreated datePublished" datetime="2024-11-18T15:29:56+09:00">2024-11-18</time>
+      <time title="Post created: 2024-11-18 15:29:56" itemprop="dateCreated datePublished" datetime="2024-11-18T15:29:56+09:00">2024-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2024-11-28 17:15:13" itemprop="dateModified" datetime="2024-11-28T17:15:13+09:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +426,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
         </span>
     </span>
 
@@ -461,7 +585,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2024-11-18 15:31:41" itemprop="dateModified" datetime="2024-11-18T15:31:41+09:00">2024-11-18</time>
+      <time title="Updated at: 2024-11-28 17:16:24" itemprop="dateModified" datetime="2024-11-28T17:16:24+09:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -470,6 +594,10 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
         </span>
     </span>
 
@@ -555,9 +683,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2024-10-28 18:01:32 / Updated at: 18:38:16" itemprop="dateCreated datePublished" datetime="2024-10-28T18:01:32+09:00">2024-10-28</time>
+      <time title="Post created: 2024-10-28 18:01:32" itemprop="dateCreated datePublished" datetime="2024-10-28T18:01:32+09:00">2024-10-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2024-11-28 17:18:55" itemprop="dateModified" datetime="2024-11-28T17:18:55+09:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -566,6 +700,10 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
         </span>
     </span>
 
@@ -652,9 +790,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2024-10-27 17:04:14 / Updated at: 17:14:00" itemprop="dateCreated datePublished" datetime="2024-10-27T17:04:14+09:00">2024-10-27</time>
+      <time title="Post created: 2024-10-27 17:04:14" itemprop="dateCreated datePublished" datetime="2024-10-27T17:04:14+09:00">2024-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2024-11-28 17:16:06" itemprop="dateModified" datetime="2024-11-28T17:16:06+09:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -663,6 +807,10 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
         </span>
     </span>
 
@@ -746,9 +894,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2024-10-19 18:12:20 / Updated at: 18:35:59" itemprop="dateCreated datePublished" datetime="2024-10-19T18:12:20+09:00">2024-10-19</time>
+      <time title="Post created: 2024-10-19 18:12:20" itemprop="dateCreated datePublished" datetime="2024-10-19T18:12:20+09:00">2024-10-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2024-11-28 17:18:18" itemprop="dateModified" datetime="2024-11-28T17:18:18+09:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -757,6 +911,10 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
         </span>
     </span>
 
