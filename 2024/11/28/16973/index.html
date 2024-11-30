@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://ch2mi.github.io/image/16973/ex3.png">
 <meta property="og:image" content="https://ch2mi.github.io/image/16973/1.png">
 <meta property="article:published_time" content="2024-11-28T08:04:14.000Z">
-<meta property="article:modified_time" content="2024-11-28T08:19:07.033Z">
+<meta property="article:modified_time" content="2024-11-30T08:47:28.935Z">
 <meta property="article:author" content="CH2MI">
 <meta property="article:tag" content="Graph Traversal">
 <meta property="article:tag" content="BFS">
@@ -141,8 +141,9 @@
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">태그</span>
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
 </div>
@@ -201,9 +202,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2024-11-28 17:04:14 / Updated at: 17:19:07" itemprop="dateCreated datePublished" datetime="2024-11-28T17:04:14+09:00">2024-11-28</time>
+      <time title="Post created: 2024-11-28 17:04:14" itemprop="dateCreated datePublished" datetime="2024-11-28T17:04:14+09:00">2024-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2024-11-30 17:47:28" itemprop="dateModified" datetime="2024-11-30T17:47:28+09:00">2024-11-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,6 +246,8 @@
 <p>크기가 N×M인 격자판에 크기가 H×W인 직사각형이 놓여 있다. 격자판은 크기가 1×1인 칸으로 나누어져 있다. 격자판의 가장 왼쪽 위 칸은 (1, 1), 가장 오른쪽 아래 칸은 (N, M)이다. 직사각형의 가장 왼쪽 위칸은 $(S_r, S_c)$에 있을 때, 이 직사각형의 가장 왼쪽 위칸을 $(F_r, F_c)$로 이동시키기 위한 최소 이동 횟수를 구해보자.</p>
 <p>격자판의 각 칸에는 빈 칸 또는 벽이 있다. 직사각형은 벽이 있는 칸에 있을 수 없다. 또한, 직사각형은 격자판을 벗어날 수 없다.</p>
 <p>직사각형은 한 번에 왼쪽, 오른쪽, 위, 아래 중 한 방향으로 한 칸 이동시킬 수 있다.</p>
+<span id="more"></span>
+
 <h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>예제 1번으로 예를 들어보자.</p>
 <p> 크기가 HxW인 직사각형을 빨간색 사각형이라고 한다면, 빨간색 사각형의 위치를 왼쪽 그림에서 오른쪽 그림으로 이동해야 한다.<br><img src="/image/16973/ex1.png" alt="alt text"></p>
 <p>이때 중간에 있는 검은색 사각형이 벽이기 때문에 빨간색 사각형을 오른쪽으로 밀어서 이동할 수 없고 그림과 같이 아래로 돌아가야 한다.<br><img src="/image/16973/ex2.png" alt="alt text"></p>

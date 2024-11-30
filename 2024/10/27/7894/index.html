@@ -19,16 +19,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오. 풀이 및 구현주어진 정수 $m$의 범위가 $(1 \leq m \l">
+    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[백준] 7894 큰 수 (C++)">
 <meta property="og:url" content="https://ch2mi.github.io/2024/10/27/7894/index.html">
 <meta property="og:site_name" content="CH2MI LOG">
-<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오. 풀이 및 구현주어진 정수 $m$의 범위가 $(1 \leq m \l">
+<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://ch2mi.github.io/image/7894/1.png">
 <meta property="article:published_time" content="2024-10-27T08:04:14.000Z">
-<meta property="article:modified_time" content="2024-11-28T08:16:06.010Z">
+<meta property="article:modified_time" content="2024-11-30T08:47:42.819Z">
 <meta property="article:author" content="CH2MI">
 <meta property="article:tag" content="Math">
 <meta name="twitter:card" content="summary">
@@ -137,8 +137,9 @@
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">태그</span>
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
 </div>
@@ -205,7 +206,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2024-11-28 17:16:06" itemprop="dateModified" datetime="2024-11-28T17:16:06+09:00">2024-11-28</time>
+      <time title="Updated at: 2024-11-30 17:47:42" itemprop="dateModified" datetime="2024-11-30T17:47:42+09:00">2024-11-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -240,6 +241,8 @@
     <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/7894">https://www.acmicpc.net/problem/7894</a></p>
 <p>많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다.</p>
 <p>수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.</p>
+<span id="more"></span>
+
 <h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>주어진 정수 $m$의 범위가 $(1 \leq m \leq 10^7)$ 이므로 그대로 $m!$을 구하기엔 무리가 있다.</p>
 <p>그래서 사용한 것이 로그이다. </p>
 <p>$\log(a)$는 $a$를 만들기 위한 10의 지수 값을 물어보는 것인데, 이때 지수 값은 곧 자리수와 연관이 있다.</p>
