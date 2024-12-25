@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;24235 조상때부터 대대로 물려받던 땅이 있다. 땅이 매우 크기 때문에$N$개 위치를 좌표평면 위에 점으로 표시를 해놓았다. 땅은$N$개의 점을 모두 포함하는 가장 작은 볼록다각형이다. 이 땅을 두 명한테 나눠주려고 한다. 나눠주는 땅의 넓이가 같도록 해야 싸움이 일어나지 않을 것">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[백준] 24235 유산 (C++)">
+<meta property="og:url" content="https://ch2mi.github.io/2024/12/25/24235/index.html">
+<meta property="og:site_name" content="CH2MI LOG">
+<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;24235 조상때부터 대대로 물려받던 땅이 있다. 땅이 매우 크기 때문에$N$개 위치를 좌표평면 위에 점으로 표시를 해놓았다. 땅은$N$개의 점을 모두 포함하는 가장 작은 볼록다각형이다. 이 땅을 두 명한테 나눠주려고 한다. 나눠주는 땅의 넓이가 같도록 해야 싸움이 일어나지 않을 것">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://ch2mi.github.io/image/24235/img.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/24235/img_1.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/24235/img_2.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/24235/img_3.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/24235/img_4.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/24235/img_5.png">
+<meta property="article:published_time" content="2024-12-25T10:37:32.000Z">
+<meta property="article:modified_time" content="2024-12-25T12:35:26.721Z">
+<meta property="article:author" content="CH2MI">
+<meta property="article:tag" content="Geometry">
+<meta property="article:tag" content="Binary Search">
+<meta property="article:tag" content="Parametric Search">
+<meta property="article:tag" content="Convex Hull">
+<meta property="article:tag" content="Area Of A Polygon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ch2mi.github.io/image/24235/img.png">
+
+
+<link rel="canonical" href="https://ch2mi.github.io/2024/12/25/24235/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2024/12/25/24235/","path":"2024/12/25/24235/","title":"[백준] 24235 유산 (C++)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[백준] 24235 유산 (C++) | CH2MI LOG</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">CH2MI LOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="검색" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">문제</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%92%80%EC%9D%B4-%EB%B0%8F-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text">풀이 및 구현</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%BB%A8%EB%B2%A1%EC%8A%A4%ED%97%90-%EA%B5%AC%ED%95%98%EA%B8%B0"><span class="nav-number">2.1.</span> <span class="nav-text">컨벡스헐 구하기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%9C%97%EA%BB%8D%EC%A7%88-%EC%95%84%EB%9E%AB%EA%BB%8D%EC%A7%88-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0"><span class="nav-number">2.2.</span> <span class="nav-text">윗껍질, 아랫껍질 분리하기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#solve-%ED%95%A8%EC%88%98-%EB%A7%8C%EB%93%A4%EA%B8%B0-1-%EC%BB%A8%EB%B2%A1%EC%8A%A4-%ED%97%90%EA%B3%BC-%EC%A7%81%EC%84%A0%EC%9D%98-%EA%B5%90%EC%A0%90-%EA%B5%AC%ED%95%98%EA%B8%B0"><span class="nav-number">2.3.</span> <span class="nav-text">solve 함수 만들기 (1) - 컨벡스 헐과 직선의 교점 구하기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#solve-%ED%95%A8%EC%88%98-%EB%A7%8C%EB%93%A4%EA%B8%B0-2-%EB%91%90-%EC%98%81%EC%97%AD%EC%9D%98-%EB%84%93%EC%9D%B4-%EA%B5%AC%ED%95%98%EA%B8%B0"><span class="nav-number">2.4.</span> <span class="nav-text">solve 함수 만들기 (2) - 두 영역의 넓이 구하기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%9D%B4%EB%B6%84-%ED%83%90%EC%83%89-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="nav-number">2.5.</span> <span class="nav-text">이분 탐색 만들기</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%BD%94%EB%93%9C"><span class="nav-number">3.</span> <span class="nav-text">코드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">4.</span> <span class="nav-text">후기</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CH2MI"
+      src="/images/icon.png">
+  <p class="site-author-name" itemprop="name">CH2MI</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ch2mi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch2mi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/12/25/24235/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[백준] 24235 유산 (C++) | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [백준] 24235 유산 (C++)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2024-12-25 19:37:32 / Updated at: 21:35:26" itemprop="dateCreated datePublished" datetime="2024-12-25T19:37:32+09:00">2024-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/12/25/24235/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/25/24235/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/24235">https://www.acmicpc.net/problem/24235</a></p>
+<p>조상때부터 대대로 물려받던 땅이 있다. 땅이 매우 크기 때문에<br>$N$개 위치를 좌표평면 위에 점으로 표시를 해놓았다. 땅은<br>$N$개의 점을 모두 포함하는 가장 작은 볼록다각형이다.</p>
+<p>이 땅을 두 명한테 나눠주려고 한다. 나눠주는 땅의 넓이가 같도록 해야 싸움이 일어나지 않을 것이기 때문에<br>$y$축이랑 평행한 직선 $x &#x3D; a$를 그어 나눠지는 두 땅의 넓이가 같도록 하려고 한다.</p>
+<p>[그림 1]처럼 좌표평면에 9개 점이 존재한다고 가정해보자.</p>
+<p><img src="/image/24235/img.png" alt="img.png"></p>
+<div style="text-align: center;">
+
+<p>[그림 1] 9개의 점을 좌표평면에 표시</p>
+</div>  
+
+<p>땅을 표시하는 좌표평면 정보에서 땅은 9개의 점을 모두 포함하는 가장 작은 볼록다각형이기 때문에 [그림 2]와 같다.</p>
+<p><img src="/image/24235/img_1.png" alt="img_1.png"></p>
+<div style="text-align: center;">
+
+<p>[그림 2] 좌표평면에 땅에 해당하는 부분 표시</p>
+</div>  
+
+<p>두 명이 이 땅을 넓이가 같도록 나눠야 하기 때문에 [그림 3]처럼 직선을 그어 두 땅의 넓이가 같도록 구분하면 된다.</p>
+<p><img src="/image/24235/img_2.png" alt="img_2.png"></p>
+<div style="text-align: center;"> 
+
+<p>[그림 3] 두 땅의 넓이가 같도록 $x &#x3D; a$ 직선으로 구분 </p>
+</div>  
+
+<p>땅의 정보가 주어졌을 때 같은 면적의 땅을 나눌 수 있도록 $a$의 값을 찾아주자.</p>
+<span id="more"></span>
+
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>문제에 대한 접근은 어렵지 않다.</p>
+<p>주어진 땅의 넓이가 $N$개의 점을 모두 포함하는 가장 작은 볼록다각형이라고 주어졌으니 주어진 점으로 컨벡스 헐을 만든다.</p>
+<p>땅을 나눌 때는 $y$축과 평행한 직선으로 땅을 나누면 되기 때문에 컨벡스 헐에서 $x_{min}$과 $x_{max}$를 구한 뒤, 이를 lo, hi로 놓고 이분 탐색을 돌리면 된다.</p>
+<p>이때 땅의 넓이는 부동 소수점으로 표현되기 때문에 오차에 유의하여 돌아야 한다.</p>
+<h4 id="컨벡스헐-구하기"><a href="#컨벡스헐-구하기" class="headerlink" title="컨벡스헐 구하기"></a>컨벡스헐 구하기</h4><p>컨벡스 헐을 구하는 부분은 <a href="https://ch2mi.github.io/2024/11/24/3878/#%EC%BD%94%EB%93%9C">3878 점분리</a>에 사용한 코드를 살짝 변형했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">area</span><span class="params">(point&amp; a, point&amp; b, point&amp; c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a[<span class="number">0</span>] * b[<span class="number">1</span>] + b[<span class="number">0</span>] * c[<span class="number">1</span>] + c[<span class="number">0</span>] * a[<span class="number">1</span>] - (b[<span class="number">0</span>] * a[<span class="number">1</span>] + c[<span class="number">0</span>] * b[<span class="number">1</span>] + a[<span class="number">0</span>] * c[<span class="number">1</span>])) / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CCW</span><span class="params">(point&amp; a, point&amp; b, point&amp; c)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> ans = <span class="built_in">area</span>(a, b, c);</span><br><span class="line">    <span class="keyword">if</span> (ans &gt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (ans &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dist</span><span class="params">(point&amp; a, point&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dx = b[<span class="number">0</span>] - a[<span class="number">0</span>], dy = b[<span class="number">1</span>] - a[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> dx * dx + dy * dy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;point&gt; <span class="title">convexhull</span><span class="params">(vector&lt;point&gt;&amp; v)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, v.<span class="built_in">end</span>(), [&amp;](point&amp; a, point&amp; b) &#123;</span><br><span class="line">        <span class="type">int</span> ccw = <span class="built_in">CCW</span>(v[<span class="number">0</span>], a, b);</span><br><span class="line">        <span class="keyword">if</span> (!ccw) <span class="keyword">return</span> <span class="built_in">dist</span>(v[<span class="number">0</span>], a) &lt; <span class="built_in">dist</span>(v[<span class="number">0</span>], b);</span><br><span class="line">        <span class="keyword">return</span> ccw &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; (<span class="type">int</span>)v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (st.<span class="built_in">size</span>() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(i);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> a = st.<span class="built_in">top</span>(); st.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = st.<span class="built_in">top</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">CCW</span>(v[b], v[a], v[i]) &gt; <span class="number">0</span>) st.<span class="built_in">push</span>(a), st.<span class="built_in">push</span>(i);</span><br><span class="line">        <span class="keyword">else</span> i--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">ch</span><span class="params">(st.size())</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : ch) p = v[st.<span class="built_in">top</span>()], st.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이후 넓이를 구하는 부분이 필요하기 때문에 외적하는 부분을 <code>area()</code>로 따로 분리한 것 이외는 차이가 없다.</p>
+<h4 id="윗껍질-아랫껍질-분리하기"><a href="#윗껍질-아랫껍질-분리하기" class="headerlink" title="윗껍질, 아랫껍질 분리하기"></a>윗껍질, 아랫껍질 분리하기</h4><p>컨벅스 헐을 구했으면 넓이를 계산하기 위해 윗 껍질과 아래껍질로 분리했다.</p>
+<p>컨벡스 헐을 구하는 알고리즘 중에 모노톤 체인 기법을 이용하면 편리하게 분리할 수 있겠지만 그라함 스캔이 익숙해서 컨벡스 헐을 구한 뒤 이를 분리했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sep</span><span class="params">(vector&lt;point&gt;&amp; ch, vector&lt;point&gt;&amp; up, vector&lt;point&gt;&amp; down)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> l = (<span class="type">int</span>)ch.<span class="built_in">size</span>();</span><br><span class="line">    up.<span class="built_in">push_back</span>(ch[l - <span class="number">1</span>]); down.<span class="built_in">push_back</span>(ch[l - <span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (ch[i][<span class="number">0</span>] &lt;= ch[i + <span class="number">1</span>][<span class="number">0</span>]) &#123;</span><br><span class="line">        up.<span class="built_in">push_back</span>(ch[i++]);</span><br><span class="line">    &#125;</span><br><span class="line">    up.<span class="built_in">push_back</span>(ch[i]);</span><br><span class="line">    <span class="type">int</span> j = l - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">        down.<span class="built_in">push_back</span>(ch[j--]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>내가 사용하는 컨벡스 헐은 정점들이 시계방향으로 담겨있기 때문에 방향에 유의해서 up과 down 벡터에 $x$좌표가 증가하는 방향으로 좌표들이 저장될 수 있게 했다.</p>
+<p>[예제 1]을 <code>sep()</code> 함수까지 실행하면 아래와 같이 윗껍질과 아래껍질이 분리되는 것을 볼 수 있다.</p>
+<p><img src="/image/24235/img_3.png" alt="img_3.png"></p>
+<h4 id="solve-함수-만들기-1-컨벡스-헐과-직선의-교점-구하기"><a href="#solve-함수-만들기-1-컨벡스-헐과-직선의-교점-구하기" class="headerlink" title="solve 함수 만들기 (1) - 컨벡스 헐과 직선의 교점 구하기"></a>solve 함수 만들기 (1) - 컨벡스 헐과 직선의 교점 구하기</h4><p>이분 탐색을 돌 때 조건을 어떻게 만족하는지에 따라 lo와 hi를 변경하는데 이를 판별하기위한 <code>solve()</code> 함수가 필요하다.</p>
+<p><code>solve()</code> 함수에서는 $x&#x3D;mid$에서 왼쪽 구역과 오른쪽 구역을 나누고 이 두 구역의 넓이를 비교한다.</p>
+<p>왼쪽 구역과 오른쪽 구역을 나누기 위해서는 컨벡스 헐과 $x&#x3D;mid$의 교점이 필요하다.</p>
+<p>교점이 한 껍질의 두 점 $a(x_1, y_1), b(x_2, y_2)$을 잇는 선분에 생길 때 우리는 교점의 $x$좌표인 $mid$를 알고 있기 때문에 up과 down에서 $x$좌표에 대해 $mid$로 <code>lower_bound</code>를 사용한다면 $b$의 좌표를 구할 수 있다.</p>
+<p>$a$점은 $b$점의 바로 이전 점이기 때문에 추가적으로 구할 필요가 없다.</p>
+<p>컨벡스 헐은 각 점을 직선으로 연결하기 때문에 선형 보간을 이용해 선분과 직선의 교점$(x, y)$을 찾을 수 있다.</p>
+<p>$$ x &#x3D; mid \quad y &#x3D; y_1 + t(y_2 - y_1) \quad t&#x3D;\frac {(mid - x_1)}{(x_2 - x_1)} $$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">point <span class="title">intersection</span><span class="params">(point&amp; a, point&amp; b, <span class="type">double</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> t = (c - a[<span class="number">0</span>]) / (b[<span class="number">0</span>] - a[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> &#123;c, a[<span class="number">1</span>] + t * (b[<span class="number">1</span>] - a[<span class="number">1</span>])&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(vector&lt;point&gt;&amp; up, vector&lt;point&gt;&amp; down, <span class="type">double</span> mid)</span> </span>&#123;</span><br><span class="line">    point m = &#123;mid, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> ui = <span class="built_in">lower_bound</span>(up.<span class="built_in">begin</span>(), up.<span class="built_in">end</span>(), m) - up.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="type">int</span> di = <span class="built_in">lower_bound</span>(down.<span class="built_in">begin</span>(), down.<span class="built_in">end</span>(), m) - down.<span class="built_in">begin</span>();</span><br><span class="line"></span><br><span class="line">    point u = <span class="built_in">intersection</span>(up[ui - <span class="number">1</span>], up[ui], mid);</span><br><span class="line">    point d = <span class="built_in">intersection</span>(down[di - <span class="number">1</span>], down[di], mid);</span><br></pre></td></tr></table></figure>
+
+<p><code>lower_bound</code>를 통해 윗껍질과 아랫껍질에서 교차하는 선분을 구하고, <code>intersection()</code> 함수에서 선분과 만나는 교점을 구해주었다.</p>
+<h4 id="solve-함수-만들기-2-두-영역의-넓이-구하기"><a href="#solve-함수-만들기-2-두-영역의-넓이-구하기" class="headerlink" title="solve 함수 만들기 (2) - 두 영역의 넓이 구하기"></a>solve 함수 만들기 (2) - 두 영역의 넓이 구하기</h4><p>영역을 구할 때 <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/2166">2166 - 다각형의 면적</a> 문제처럼 다각형의 이루는 순서대로 배열에 담겨 있으면 쉽게 넓이를 구할 수 있다.</p>
+<p>따라서 아래와 같이 시계 반대 방향 순서로 점들을 점들을 담아주었다.</p>
+<p><img src="/image/24235/img_4.png" alt="img_4.png"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;point&gt; p1;</span><br><span class="line">p<span class="number">1.</span><span class="built_in">reserve</span>(up.<span class="built_in">size</span>() + down.<span class="built_in">size</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; di; i++) p<span class="number">1.</span><span class="built_in">push_back</span>(down[i]);</span><br><span class="line">p<span class="number">1.</span><span class="built_in">push_back</span>(d);</span><br><span class="line">p<span class="number">1.</span><span class="built_in">push_back</span>(u);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = ui - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) p<span class="number">1.</span><span class="built_in">push_back</span>(up[i]);</span><br><span class="line"></span><br><span class="line">vector&lt;point&gt; p2;</span><br><span class="line">p<span class="number">2.</span><span class="built_in">reserve</span>(up.<span class="built_in">size</span>() + down.<span class="built_in">size</span>());</span><br><span class="line">p<span class="number">2.</span><span class="built_in">push_back</span>(d);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = di; i &lt; down.<span class="built_in">size</span>(); i++) p<span class="number">2.</span><span class="built_in">push_back</span>(down[i]);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = up.<span class="built_in">size</span>() - <span class="number">2</span>; i &gt;= ui; i--) p<span class="number">2.</span><span class="built_in">push_back</span>(up[i]);</span><br><span class="line">p<span class="number">2.</span><span class="built_in">push_back</span>(u);</span><br></pre></td></tr></table></figure>
+
+<p>만약 담는 과정에서 교점이 컨벡스 헐을 구성하는 점을 지나간다면 같은 점이 두 번 배열에 담길 수도 있지만, CCW를 계산할 때 0이 나와 상관이 없다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">area</span><span class="params">(vector&lt;point&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; (<span class="type">int</span>)a.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        sum += <span class="built_in">abs</span>(<span class="built_in">area</span>(a[<span class="number">0</span>], a[i - <span class="number">1</span>], a[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(vector&lt;point&gt;&amp; up, vector&lt;point&gt;&amp; down, <span class="type">double</span> mid)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 생략</span></span><br><span class="line">    <span class="type">double</span> left = <span class="built_in">area</span>(p1), right = <span class="built_in">area</span>(p2);</span><br><span class="line">    <span class="keyword">return</span> left &lt; right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>area()</code> 함수를 통해 p1배열과 p2 배열의 넓이를 각각 구해주고 왼쪽 부분과 오른쪽 부분 넓이를 비교한 결과를 반환했다.</p>
+<h4 id="이분-탐색-만들기"><a href="#이분-탐색-만들기" class="headerlink" title="이분 탐색 만들기"></a>이분 탐색 만들기</h4><p>lo는 $x_{min}$, hi는 $x_{max}$로 설정하고 <code>(lo + 1e-5 &lt; hi)</code>를 만족할 때까지 이분 탐색을 반복했다.</p>
+<p><code>solve()</code> 함수가 <code>true</code>면 왼쪽 구역의 넓이가 더 작으므로 <code>lo = mid</code>로 설정하고,</p>
+<p><code>false</code>면 오른쪽 구역의 넓이가 더 작으므로 <code>hi = mid</code>로 설정했다.</p>
+<p>반복이 끝났으면 lo, hi의 차이가 $10^{-5}$보다 작아 lo, hi중 둘 중 아무거나 출력해도 문제의 출력조건 절대&#x2F;상대 오차가 $10^{-3}$ 이하를 만족해서, lo를 출력했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> lo = up[<span class="number">0</span>][<span class="number">0</span>], hi = up[up.<span class="built_in">size</span>() - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line"><span class="keyword">while</span> (lo<span class="number">+1e-5</span>&lt;hi) &#123;</span><br><span class="line">    <span class="type">double</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">solve</span>(up, down, mid)) lo = mid;</span><br><span class="line">    <span class="keyword">else</span> hi = mid;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; fixed;</span><br><span class="line">cout.<span class="built_in">precision</span>(<span class="number">4</span>);</span><br><span class="line">cout &lt;&lt; lo;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> array&lt;<span class="type">double</span>, 2&gt; point;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">area</span><span class="params">(point&amp; a, point&amp; b, point&amp; c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a[<span class="number">0</span>] * b[<span class="number">1</span>] + b[<span class="number">0</span>] * c[<span class="number">1</span>] + c[<span class="number">0</span>] * a[<span class="number">1</span>] - (b[<span class="number">0</span>] * a[<span class="number">1</span>] + c[<span class="number">0</span>] * b[<span class="number">1</span>] + a[<span class="number">0</span>] * c[<span class="number">1</span>])) / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CCW</span><span class="params">(point&amp; a, point&amp; b, point&amp; c)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> ans = <span class="built_in">area</span>(a, b, c);</span><br><span class="line">    <span class="keyword">if</span> (ans &gt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (ans &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dist</span><span class="params">(point&amp; a, point&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> dx = b[<span class="number">0</span>] - a[<span class="number">0</span>], dy = b[<span class="number">1</span>] - a[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> dx * dx + dy * dy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;point&gt; <span class="title">convexhull</span><span class="params">(vector&lt;point&gt;&amp; v)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, v.<span class="built_in">end</span>(), [&amp;](point&amp; a, point&amp; b) &#123;</span><br><span class="line">        <span class="type">int</span> ccw = <span class="built_in">CCW</span>(v[<span class="number">0</span>], a, b);</span><br><span class="line">        <span class="keyword">if</span> (!ccw) <span class="keyword">return</span> <span class="built_in">dist</span>(v[<span class="number">0</span>], a) &lt; <span class="built_in">dist</span>(v[<span class="number">0</span>], b);</span><br><span class="line">        <span class="keyword">return</span> ccw &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    st.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; (<span class="type">int</span>)v.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (st.<span class="built_in">size</span>() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(i);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> a = st.<span class="built_in">top</span>(); st.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = st.<span class="built_in">top</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">CCW</span>(v[b], v[a], v[i]) &gt; <span class="number">0</span>) st.<span class="built_in">push</span>(a), st.<span class="built_in">push</span>(i);</span><br><span class="line">        <span class="keyword">else</span> i--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">ch</span><span class="params">(st.size())</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : ch) p = v[st.<span class="built_in">top</span>()], st.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sep</span><span class="params">(vector&lt;point&gt;&amp; ch, vector&lt;point&gt;&amp; up, vector&lt;point&gt;&amp; down)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> l = (<span class="type">int</span>)ch.<span class="built_in">size</span>();</span><br><span class="line">    up.<span class="built_in">push_back</span>(ch[l - <span class="number">1</span>]); down.<span class="built_in">push_back</span>(ch[l - <span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (ch[i][<span class="number">0</span>] &lt;= ch[i + <span class="number">1</span>][<span class="number">0</span>]) &#123;</span><br><span class="line">        up.<span class="built_in">push_back</span>(ch[i++]);</span><br><span class="line">    &#125;</span><br><span class="line">    up.<span class="built_in">push_back</span>(ch[i]);</span><br><span class="line">    <span class="type">int</span> j = l - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">        down.<span class="built_in">push_back</span>(ch[j--]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">point <span class="title">intersection</span><span class="params">(point&amp; a, point&amp; b, <span class="type">double</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> t = (c - a[<span class="number">0</span>]) / (b[<span class="number">0</span>] - a[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> &#123;c, a[<span class="number">1</span>] + t * (b[<span class="number">1</span>] - a[<span class="number">1</span>])&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">area</span><span class="params">(vector&lt;point&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; (<span class="type">int</span>)a.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        sum += <span class="built_in">abs</span>(<span class="built_in">area</span>(a[<span class="number">0</span>], a[i - <span class="number">1</span>], a[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(vector&lt;point&gt;&amp; up, vector&lt;point&gt;&amp; down, <span class="type">double</span> mid)</span> </span>&#123;</span><br><span class="line">    point m = &#123;mid, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> ui = <span class="built_in">lower_bound</span>(up.<span class="built_in">begin</span>(), up.<span class="built_in">end</span>(), m) - up.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="type">int</span> di = <span class="built_in">lower_bound</span>(down.<span class="built_in">begin</span>(), down.<span class="built_in">end</span>(), m) - down.<span class="built_in">begin</span>();</span><br><span class="line"></span><br><span class="line">    point u = <span class="built_in">intersection</span>(up[ui - <span class="number">1</span>], up[ui], mid);</span><br><span class="line">    point d = <span class="built_in">intersection</span>(down[di - <span class="number">1</span>], down[di], mid);</span><br><span class="line"></span><br><span class="line">    vector&lt;point&gt; p1;</span><br><span class="line">    p<span class="number">1.</span><span class="built_in">reserve</span>(up.<span class="built_in">size</span>() + down.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; di; i++) p<span class="number">1.</span><span class="built_in">push_back</span>(down[i]);</span><br><span class="line">    p<span class="number">1.</span><span class="built_in">push_back</span>(d);</span><br><span class="line">    p<span class="number">1.</span><span class="built_in">push_back</span>(u);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = ui - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) p<span class="number">1.</span><span class="built_in">push_back</span>(up[i]);</span><br><span class="line"></span><br><span class="line">    vector&lt;point&gt; p2;</span><br><span class="line">    p<span class="number">2.</span><span class="built_in">reserve</span>(up.<span class="built_in">size</span>() + down.<span class="built_in">size</span>());</span><br><span class="line">    p<span class="number">2.</span><span class="built_in">push_back</span>(d);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = di; i &lt; down.<span class="built_in">size</span>(); i++) p<span class="number">2.</span><span class="built_in">push_back</span>(down[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = up.<span class="built_in">size</span>() - <span class="number">2</span>; i &gt;= ui; i--) p<span class="number">2.</span><span class="built_in">push_back</span>(up[i]);</span><br><span class="line">    p<span class="number">2.</span><span class="built_in">push_back</span>(u);</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> left = <span class="built_in">area</span>(p1), right = <span class="built_in">area</span>(p2);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> left &lt; right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">v</span><span class="params">(N)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; [x, y] : v) cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">ch</span><span class="params">(convexhull(v))</span></span>;</span><br><span class="line"></span><br><span class="line">    vector&lt;point&gt; up, down;</span><br><span class="line">    <span class="built_in">sep</span>(ch, up, down);</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> lo = up[<span class="number">0</span>][<span class="number">0</span>], hi = up[up.<span class="built_in">size</span>() - <span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">while</span> (lo<span class="number">+1e-5</span>&lt;hi) &#123;</span><br><span class="line">        <span class="type">double</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">solve</span>(up, down, mid)) lo = mid;</span><br><span class="line">        <span class="keyword">else</span> hi = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; fixed;</span><br><span class="line">    cout.<span class="built_in">precision</span>(<span class="number">4</span>);</span><br><span class="line">    cout &lt;&lt; lo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/24235/img_5.png" alt="img_5.png"></p>
+<p>문제를 어떻게 풀어야하는지 아이디어는 쉽지만 구현이 복잡하고, 실수하기 쉬운 문제였다.</p>
+<p>부동 소숫점으로 이분 탐색을 도는 경우가 처음이라 종료 조건을 잘못 세우는 바람에 3번 틀렸다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Geometry/" rel="tag"># Geometry</a>
+              <a href="/tags/Binary-Search/" rel="tag"># Binary Search</a>
+              <a href="/tags/Parametric-Search/" rel="tag"># Parametric Search</a>
+              <a href="/tags/Convex-Hull/" rel="tag"># Convex Hull</a>
+              <a href="/tags/Area-Of-A-Polygon/" rel="tag"># Area Of A Polygon</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/12/20/32301/" rel="prev" title="[백준] 32301 세계를 만들어요 (C++)">
+                  <i class="fa fa-angle-left"></i> [백준] 32301 세계를 만들어요 (C++)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">CH2MI</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"CH2MILOG","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
