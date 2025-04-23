@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://ch2mi.github.io/tags/Sweeping/</loc>
+        <lastmod>2025-04-23T04:30:56.582Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ch2mi.github.io/tags/Prefix-Sum/</loc>
+        <lastmod>2025-04-23T04:30:56.582Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ch2mi.github.io/tags/Sorting/</loc>
+        <lastmod>2025-04-23T04:30:56.582Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://ch2mi.github.io/tags/Dijkstra-s/</loc>
         <lastmod>2025-01-08T14:40:45.713Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -109,13 +130,6 @@
 
     <url>
         <loc>https://ch2mi.github.io/tags/Two-pointer/</loc>
-        <lastmod>2024-11-30T08:47:55.725Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ch2mi.github.io/tags/Sorting/</loc>
         <lastmod>2024-11-30T08:47:55.725Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

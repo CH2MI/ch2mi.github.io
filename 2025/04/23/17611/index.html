@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="문제 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;17611">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[백준] 17611 직각다각형 (C++)">
+<meta property="og:url" content="https://ch2mi.github.io/2025/04/23/17611/index.html">
+<meta property="og:site_name" content="CH2MI LOG">
+<meta property="og:description" content="문제 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;17611">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://ch2mi.github.io/img.png">
+<meta property="article:published_time" content="2025-04-23T03:39:08.000Z">
+<meta property="article:modified_time" content="2025-04-23T04:30:56.582Z">
+<meta property="article:author" content="CH2MI">
+<meta property="article:tag" content="Sorting">
+<meta property="article:tag" content="Prefix Sum">
+<meta property="article:tag" content="Sweeping">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ch2mi.github.io/img.png">
+
+
+<link rel="canonical" href="https://ch2mi.github.io/2025/04/23/17611/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2025/04/23/17611/","path":"2025/04/23/17611/","title":"[백준] 17611 직각다각형 (C++)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[백준] 17611 직각다각형 (C++) | CH2MI LOG</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">CH2MI LOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="검색" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%92%80%EC%9D%B4-%EB%B0%8F-%EA%B5%AC%ED%98%84"><span class="nav-number">1.</span> <span class="nav-text">풀이 및 구현</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%BD%94%EB%93%9C"><span class="nav-number">2.</span> <span class="nav-text">코드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">3.</span> <span class="nav-text">후기</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CH2MI"
+      src="/images/icon.png">
+  <p class="site-author-name" itemprop="name">CH2MI</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ch2mi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch2mi" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2025/04/23/17611/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[백준] 17611 직각다각형 (C++) | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [백준] 17611 직각다각형 (C++)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2025-04-23 12:39:08 / Updated at: 13:30:56" itemprop="dateCreated datePublished" datetime="2025-04-23T12:39:08+09:00">2025-04-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/04/23/17611/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/04/23/17611/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>문제 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/17611">https://www.acmicpc.net/problem/17611</a></p>
+<span id="more"></span>
+
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>입력으로 주어진 단순직각다각형과 가장 많이 교차하는 수평선분 혹은 수직선분을 찾아야 하는 문제이다.</p>
+<p>주어진 좌표의 범위가 $-500,000 ≤ x_i, y_i ≤ 500,000$ 이기 때문에<br>제일 먼저 든 생각은 x, y좌표를 전부 확인하면서 현재 몇 개가 겹쳐있는지 확인해도 될 것 같다는 생각이었다.</p>
+<p>이를 바탕으로 조금만 더 최적화를 해보면 현재 몇 개의 선분이 겹쳐있는지 들고 있으면서 선분의 시작점, 끝점을 훑어보면 된다.</p>
+<p>수평선, 수직선 각각의 경우에 대해 확인해야 하므로 들어온 입력으로 수평선과 수직선을 찾아내는 작업이 필요했다.</p>
+<p>꼭짓점이 시계 방향으로 들어오므로 이전 점과 비교해서 x좌표가 같으면 수직선으로, y좌표가 같으면 수평선으로 넣어주었다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;point&gt; <span class="title">v</span><span class="params">(N)</span></span>; <span class="comment">// typedef array&lt;int, 2&gt; point;</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; [x, y] : v) cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">vector&lt;point&gt; h, w;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 이전 점과 현재 점을 비교하기 위해 1 ~ N까지 돌면서 </span></span><br><span class="line"><span class="comment">// 이때 N일 때는 인덱스를 벗어나므로 현재 점은 % N을 통해 보정해주었다.</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123; </span><br><span class="line">    <span class="keyword">if</span> (v[i - <span class="number">1</span>][<span class="number">0</span>] == v[i % N][<span class="number">0</span>]) &#123; <span class="comment">// x좌표가 같으므로 수직선</span></span><br><span class="line">        h.<span class="built_in">push_back</span>(&#123;v[i - <span class="number">1</span>][<span class="number">1</span>], v[i % N][<span class="number">1</span>]&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123; <span class="comment">// 그외에는 수평선이다.</span></span><br><span class="line">        w.<span class="built_in">push_back</span>(&#123;v[i - <span class="number">1</span>][<span class="number">0</span>], v[i % N][<span class="number">0</span>]&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이후 함수에서 수직선, 수평선 각각에 대해 최대 교차 횟수를 구해주어야 한다.</p>
+<p>가장 작은 좌표부터 시작해서 시작점과 만나면 +1, 끝점과 만나면 -1을 해주면서 이때의 최댓값을 구하면 최대 교차 횟수를 구할 수 있다.</p>
+<p>이를 위해 각 선분의 모든 점을 <code>&#123;점, 선분 번호&#125;</code> 형식으로 분리하고 배열에 넣어 정렬했다. </p>
+<p>배열을 순회하면서 선분 번호가 처음 나오면 +1, 다시 나오면 -1을 해주는 방식으로 구현을 할 수 있다.</p>
+<p>이때 주의해야할 점이 몇가지 있는데 먼저 현재 구현대로는 선분의 값이 모두 <code>시작점 &lt; 끝점</code>의 형식으로 되어 있지 않다는 것이다.</p>
+<p>시계방향으로 점이 들어왔으므로 <code>끝점 &lt; 시작점</code>인 경우가 있기 때문에 이를 확인해 먼저 <code>swap</code>을 해주어야 한다.</p>
+<p>두번째로 선분이 시작하거나, 끝나는 곳이 겹칠 때 조심해야 한다. 시작하는 곳을 먼저 계산하게 되면 해당 지점에서는 변화가 없어야 하는데 하나 커진 값이 최댓값으로 들어갈 수 있기 때문이다.</p>
+<p>따라서 각 점에서 계산할 때에는 선분이 끝나는 것을 먼저 계산해야 한다. 이를 위해 배열에 넣을 때 시작점은 <code>&#123;시작점, 선분 번호&#125;</code>, 끝점은 <code>&#123;끝점, -선분 번호&#125;</code> 형태로 넣어주었다.</p>
+<p><code>array</code>는 정렬할 때 인덱스 작은 값이 같으면 그 다음 인덱스를 기준으로 오름차순 정렬해주기 때문에 무조건 끝점을 먼저 계산할 수 있다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;point&gt; <span class="title">v</span><span class="params">(h.size() * <span class="number">2</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; h.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (h[i][<span class="number">0</span>] &gt; h[i][<span class="number">1</span>]) <span class="built_in">swap</span>(h[i][<span class="number">0</span>], h[i][<span class="number">1</span>]); <span class="comment">// 끝점 &lt; 시작점이면 바꿔준다.</span></span><br><span class="line">    v[i * <span class="number">2</span>] = &#123;h[i][<span class="number">0</span>], i + <span class="number">1</span>&#125;; <span class="comment">// 시작점은 양수, i가 0부터 시작하므로 선분번호를 1부터 넣어주었다.</span></span><br><span class="line">    v[i * <span class="number">2</span> + <span class="number">1</span>] = &#123;h[i][<span class="number">1</span>], -(i + <span class="number">1</span>)&#125;; <span class="comment">// 끝점은 음수</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+
+<p>정렬을 완료했으면 v 벡터를 순회하면서 n이 음수일 때는 끝점이므로 교차 횟수를 -1, n이 양수일 때는 시작점이므로 교차 횟수를 +1하고, 최댓값을 계속해서 갱신하면 최대 교차 횟수를 구할 수 있다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> cnt = <span class="number">0</span>, mx = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> [p, n] : v) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">0</span>) &#123; <span class="comment">// 끝점이면 교차 횟수를 감소</span></span><br><span class="line">        --cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123; <span class="comment">// 시작점이면 교차 횟수 증가 및 최댓값 갱신</span></span><br><span class="line">        mx = <span class="built_in">max</span>(mx, ++cnt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> array&lt;<span class="type">int</span>, 2&gt; point;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cal</span><span class="params">(vector&lt;point&gt;&amp; h)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">v</span><span class="params">(h.size() * <span class="number">2</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; h.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (h[i][<span class="number">0</span>] &gt; h[i][<span class="number">1</span>]) <span class="built_in">swap</span>(h[i][<span class="number">0</span>], h[i][<span class="number">1</span>]);</span><br><span class="line">        v[i * <span class="number">2</span>] = &#123;h[i][<span class="number">0</span>], i + <span class="number">1</span>&#125;;</span><br><span class="line">        v[i * <span class="number">2</span> + <span class="number">1</span>] = &#123;h[i][<span class="number">1</span>], -(i + <span class="number">1</span>)&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>, mx = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> [p, n] : v) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            --cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            mx = <span class="built_in">max</span>(mx, ++cnt);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">    <span class="function">vector&lt;point&gt; <span class="title">v</span><span class="params">(N)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; [x, y] : v) cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">    vector&lt;point&gt; h, w;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (v[i - <span class="number">1</span>][<span class="number">0</span>] == v[i % N][<span class="number">0</span>]) &#123;</span><br><span class="line">            h.<span class="built_in">push_back</span>(&#123;v[i - <span class="number">1</span>][<span class="number">1</span>], v[i % N][<span class="number">1</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            w.<span class="built_in">push_back</span>(&#123;v[i - <span class="number">1</span>][<span class="number">0</span>], v[i % N][<span class="number">0</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="built_in">max</span>(<span class="built_in">cal</span>(h), <span class="built_in">cal</span>(w));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/img.png" alt="img.png"><br>처음 문제를 풀 때 <code>시작점 &gt; 끝점</code> 이 경우를 고려하지 않아 틀렸다.<br>디버깅하면서 해당 경우를 찾아내어 swap 하는 걸로 바꿔주었다.</p>
+<p>또한 imos 누적합으로 풀 수 있는데 imos의 개념만 알고 실제로 해당 알고리즘을 사용한 적이 없어 해당 방법은 잘 떠오르지 않았다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Sorting/" rel="tag"># Sorting</a>
+              <a href="/tags/Prefix-Sum/" rel="tag"># Prefix Sum</a>
+              <a href="/tags/Sweeping/" rel="tag"># Sweeping</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/08/13911/" rel="prev" title="[백준] 13911 집 구하기 (C++)">
+                  <i class="fa fa-angle-left"></i> [백준] 13911 집 구하기 (C++)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">CH2MI</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"CH2MILOG","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
