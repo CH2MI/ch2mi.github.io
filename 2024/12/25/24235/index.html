@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://ch2mi.github.io/image/24235/img_4.png">
 <meta property="og:image" content="https://ch2mi.github.io/image/24235/img_5.png">
 <meta property="article:published_time" content="2024-12-25T10:37:32.000Z">
-<meta property="article:modified_time" content="2024-12-25T12:35:26.721Z">
+<meta property="article:modified_time" content="2024-12-25T12:35:26.000Z">
 <meta property="article:author" content="CH2MI">
 <meta property="article:tag" content="Geometry">
 <meta property="article:tag" content="Binary Search">
@@ -140,7 +140,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -151,7 +151,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -259,7 +259,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/24235">https://www.acmicpc.net/problem/24235</a></p>
+    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS8yNDIzNQ==">https://www.acmicpc.net/problem/24235<i class="fa fa-external-link-alt"></i></span></p>
 <p>조상때부터 대대로 물려받던 땅이 있다. 땅이 매우 크기 때문에<br>$N$개 위치를 좌표평면 위에 점으로 표시를 해놓았다. 땅은<br>$N$개의 점을 모두 포함하는 가장 작은 볼록다각형이다.</p>
 <p>이 땅을 두 명한테 나눠주려고 한다. 나눠주는 땅의 넓이가 같도록 해야 싸움이 일어나지 않을 것이기 때문에<br>$y$축이랑 평행한 직선 $x &#x3D; a$를 그어 나눠지는 두 땅의 넓이가 같도록 하려고 한다.</p>
 <p>[그림 1]처럼 좌표평면에 9개 점이 존재한다고 가정해보자.</p>
@@ -311,7 +311,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">point <span class="title">intersection</span><span class="params">(point&amp; a, point&amp; b, <span class="type">double</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> t = (c - a[<span class="number">0</span>]) / (b[<span class="number">0</span>] - a[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">return</span> &#123;c, a[<span class="number">1</span>] + t * (b[<span class="number">1</span>] - a[<span class="number">1</span>])&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(vector&lt;point&gt;&amp; up, vector&lt;point&gt;&amp; down, <span class="type">double</span> mid)</span> </span>&#123;</span><br><span class="line">    point m = &#123;mid, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> ui = <span class="built_in">lower_bound</span>(up.<span class="built_in">begin</span>(), up.<span class="built_in">end</span>(), m) - up.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="type">int</span> di = <span class="built_in">lower_bound</span>(down.<span class="built_in">begin</span>(), down.<span class="built_in">end</span>(), m) - down.<span class="built_in">begin</span>();</span><br><span class="line"></span><br><span class="line">    point u = <span class="built_in">intersection</span>(up[ui - <span class="number">1</span>], up[ui], mid);</span><br><span class="line">    point d = <span class="built_in">intersection</span>(down[di - <span class="number">1</span>], down[di], mid);</span><br></pre></td></tr></table></figure>
 
 <p><code>lower_bound</code>를 통해 윗껍질과 아랫껍질에서 교차하는 선분을 구하고, <code>intersection()</code> 함수에서 선분과 만나는 교점을 구해주었다.</p>
-<h4 id="solve-함수-만들기-2-두-영역의-넓이-구하기"><a href="#solve-함수-만들기-2-두-영역의-넓이-구하기" class="headerlink" title="solve 함수 만들기 (2) - 두 영역의 넓이 구하기"></a>solve 함수 만들기 (2) - 두 영역의 넓이 구하기</h4><p>영역을 구할 때 <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/2166">2166 - 다각형의 면적</a> 문제처럼 다각형의 이루는 순서대로 배열에 담겨 있으면 쉽게 넓이를 구할 수 있다.</p>
+<h4 id="solve-함수-만들기-2-두-영역의-넓이-구하기"><a href="#solve-함수-만들기-2-두-영역의-넓이-구하기" class="headerlink" title="solve 함수 만들기 (2) - 두 영역의 넓이 구하기"></a>solve 함수 만들기 (2) - 두 영역의 넓이 구하기</h4><p>영역을 구할 때 <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS8yMTY2">2166 - 다각형의 면적<i class="fa fa-external-link-alt"></i></span> 문제처럼 다각형의 이루는 순서대로 배열에 담겨 있으면 쉽게 넓이를 구할 수 있다.</p>
 <p>따라서 아래와 같이 시계 반대 방향 순서로 점들을 점들을 담아주었다.</p>
 <p><img src="/image/24235/img_4.png" alt="img_4.png"></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;point&gt; p1;</span><br><span class="line">p<span class="number">1.</span><span class="built_in">reserve</span>(up.<span class="built_in">size</span>() + down.<span class="built_in">size</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; di; i++) p<span class="number">1.</span><span class="built_in">push_back</span>(down[i]);</span><br><span class="line">p<span class="number">1.</span><span class="built_in">push_back</span>(d);</span><br><span class="line">p<span class="number">1.</span><span class="built_in">push_back</span>(u);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = ui - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) p<span class="number">1.</span><span class="built_in">push_back</span>(up[i]);</span><br><span class="line"></span><br><span class="line">vector&lt;point&gt; p2;</span><br><span class="line">p<span class="number">2.</span><span class="built_in">reserve</span>(up.<span class="built_in">size</span>() + down.<span class="built_in">size</span>());</span><br><span class="line">p<span class="number">2.</span><span class="built_in">push_back</span>(d);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = di; i &lt; down.<span class="built_in">size</span>(); i++) p<span class="number">2.</span><span class="built_in">push_back</span>(down[i]);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = up.<span class="built_in">size</span>() - <span class="number">2</span>; i &gt;= ui; i--) p<span class="number">2.</span><span class="built_in">push_back</span>(up[i]);</span><br><span class="line">p<span class="number">2.</span><span class="built_in">push_back</span>(u);</span><br></pre></td></tr></table></figure>

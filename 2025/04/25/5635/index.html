@@ -19,30 +19,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.">
+    <meta name="description" content="문제 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;5635">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[백준] 7894 큰 수 (C++)">
-<meta property="og:url" content="https://ch2mi.github.io/2024/10/27/7894/index.html">
+<meta property="og:title" content="[백준] 5635 생일 (C++)">
+<meta property="og:url" content="https://ch2mi.github.io/2025/04/25/5635/index.html">
 <meta property="og:site_name" content="CH2MI LOG">
-<meta property="og:description" content="문제원문 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;7894 많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다. 수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.">
+<meta property="og:description" content="문제 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;5635">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="https://ch2mi.github.io/image/7894/1.png">
-<meta property="article:published_time" content="2024-10-27T08:04:14.000Z">
-<meta property="article:modified_time" content="2024-11-30T08:47:42.000Z">
+<meta property="og:image" content="https://ch2mi.github.io/image/5635/img.png">
+<meta property="article:published_time" content="2025-04-25T07:33:59.000Z">
+<meta property="article:modified_time" content="2025-04-25T07:45:19.498Z">
 <meta property="article:author" content="CH2MI">
-<meta property="article:tag" content="Math">
+<meta property="article:tag" content="Sorting">
+<meta property="article:tag" content="Implementation">
+<meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ch2mi.github.io/image/7894/1.png">
+<meta name="twitter:image" content="https://ch2mi.github.io/image/5635/img.png">
 
 
-<link rel="canonical" href="https://ch2mi.github.io/2024/10/27/7894/">
+<link rel="canonical" href="https://ch2mi.github.io/2025/04/25/5635/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2024/10/27/7894/","path":"2024/10/27/7894/","title":"[백준] 7894 큰 수 (C++)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2025/04/25/5635/","path":"2025/04/25/5635/","title":"[백준] 5635 생일 (C++)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[백준] 7894 큰 수 (C++) | CH2MI LOG</title>
+<title>[백준] 5635 생일 (C++) | CH2MI LOG</title>
   
 
 
@@ -116,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">문제</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%92%80%EC%9D%B4-%EB%B0%8F-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text">풀이 및 구현</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%BD%94%EB%93%9C"><span class="nav-number">3.</span> <span class="nav-text">코드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">4.</span> <span class="nav-text">후기</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%92%80%EC%9D%B4-%EB%B0%8F-%EA%B5%AC%ED%98%84"><span class="nav-number">1.</span> <span class="nav-text">풀이 및 구현</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%BD%94%EB%93%9C"><span class="nav-number">2.</span> <span class="nav-text">코드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">3.</span> <span class="nav-text">후기</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -174,7 +176,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/10/27/7894/">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2025/04/25/5635/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/icon.png">
@@ -187,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[백준] 7894 큰 수 (C++) | CH2MI LOG">
+      <meta itemprop="name" content="[백준] 5635 생일 (C++) | CH2MI LOG">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [백준] 7894 큰 수 (C++)
+          [백준] 5635 생일 (C++)
         </h1>
 
         <div class="post-meta-container">
@@ -202,15 +204,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
+      
 
-      <time title="Post created: 2024-10-27 17:04:14" itemprop="dateCreated datePublished" datetime="2024-10-27T17:04:14+09:00">2024-10-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2024-11-30 17:47:42" itemprop="dateModified" datetime="2024-11-30T17:47:42+09:00">2024-11-30</time>
+      <time title="Post created: 2025-04-25 16:33:59 / Updated at: 16:45:19" itemprop="dateCreated datePublished" datetime="2025-04-25T16:33:59+09:00">2025-04-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -242,8 +238,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2024/10/27/7894/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/10/27/7894/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2025/04/25/5635/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/04/25/5635/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -256,24 +252,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS83ODk0">https://www.acmicpc.net/problem/7894<i class="fa fa-external-link-alt"></i></span></p>
-<p>많은 어플리케이션은 매우 큰 수를 사용한다. 이러한 어플리케이션은 데이터를 안전하게 전송하고, 암호화하기 위해서 수를 키로 사용한다.</p>
-<p>수가 주어지면, 그 수의 팩토리얼의 자리수를 구하는 프로그램을 작성하시오.</p>
+    <div class="post-body" itemprop="articleBody"><p>문제 링크 : <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS81NjM1">https://www.acmicpc.net/problem/5635<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
 
-<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>주어진 정수 $m$의 범위가 $(1 \leq m \leq 10^7)$ 이므로 그대로 $m!$을 구하기엔 무리가 있다.</p>
-<p>그래서 사용한 것이 로그이다. </p>
-<p>$\log(a)$는 $a$를 만들기 위한 10의 지수 값을 물어보는 것인데, 이때 지수 값은 곧 자리수와 연관이 있다.</p>
-<p>100으로 예를 들어보면 $\log(100) &#x3D; 2$이고 100의 자리수는 총 3자리이다. </p>
-<p>또한 954도 계산해보면 $\log(954) &#x3D; 2.9795…$이고 954의 자리수는 총 3자리이다.</p>
-<p>즉 계산한 결과에 로그를 취해서 소수점을 절사한다음 1을 더해주면 자리수가 나오는 것이다.</p>
-<p>$$m! &#x3D; m * (m - 1) * (m - 2) * … * 2 * 1$$</p>
-<p>위 식에 로그를 취하면 로그의 성질에 의해 곱셈이 덧셈으로 분리된다. 따라서 아래와 같은 식으로 변한다.</p>
-<p>$$\log(m!) &#x3D; \log(m) + \log(m - 1) + \log(m - 2) + … + log(2) + log(1)$$</p>
-<p>자리수는 1~m까지의 각각의 로그값의 합의 소숫점을 절사한 뒤 1을 더해주면 얻을 수 있다.</p>
-<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>); cout.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">        </span><br><span class="line">        <span class="type">double</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= N; i++) &#123;</span><br><span class="line">            count += <span class="built_in">log10</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        count += <span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; (<span class="type">int</span>)count &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p><code>이름 dd mm yyyy</code> 형식으로 입력이 주어졌을 때 가장 나이가 적은 사람과 가장 나이가 많은 사람을 찾으면 되는 문제이다.</p>
+<p>생일이 같거나, 이름이 같은 사람은 없으므로 단순하게 연도, 월, 일 순으로 정렬하면 된다.</p>
+<p>간편하게 정렬하기 위해 <code>tuple</code> STL을 이용했다. <code>tuple</code>은 정렬을 할 때 제일 앞에 원소부터 정렬이 되기 때문에 <code>tuple&lt;int, int, int, string&gt;</code> 형식으로 선언하고 연도, 월, 일, 이름 순으로 저장해주었다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;tuple&lt;<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>, string&gt;&gt; <span class="built_in">v</span>(N);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">    string s; <span class="type">int</span> d, m, y;</span><br><span class="line">    cin &gt;&gt; s &gt;&gt; d &gt;&gt; m &gt;&gt; y;</span><br><span class="line">    v[i] = &#123;y, m, d, s&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이후 정렬을 하고 맨 뒤의 원소의 이름과 맨 앞의 원소의 이름을 출력하면 된다.</p>
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">    vector&lt;tuple&lt;<span class="type">int</span>, <span class="type">int</span>, <span class="type">int</span>, string&gt;&gt; <span class="built_in">v</span>(N);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        string s; <span class="type">int</span> d, m, y;</span><br><span class="line">        cin &gt;&gt; s &gt;&gt; d &gt;&gt; m &gt;&gt; y;</span><br><span class="line">        v[i] = &#123;y, m, d, s&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br><span class="line">    cout &lt;&lt; <span class="built_in">get</span>&lt;<span class="number">3</span>&gt;(v.<span class="built_in">back</span>()) &lt;&lt; <span class="string">&#x27;\n&#x27;</span> &lt;&lt; <span class="built_in">get</span>&lt;<span class="number">3</span>&gt;(v.<span class="built_in">front</span>());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/image/7894/1.png"><br>오차때매 틀릴 것 같아서 걱정했었는데 다행히 AC를 받을 수 있었다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/../image/5635/img.png" alt="img.png"></p>
+<p><code>tuple</code>을 사용하면 구조체를 정의하고, 연산자를 따로 오버로딩 할 필요 없어 간단한 문제였다.</p>
 
     </div>
 
@@ -283,21 +273,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Math/" rel="tag"># Math</a>
+              <a href="/tags/Sorting/" rel="tag"># Sorting</a>
+              <a href="/tags/Implementation/" rel="tag"># Implementation</a>
+              <a href="/tags/String/" rel="tag"># String</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/10/19/3273/" rel="prev" title="[백준] 3273 두 수의 합 (C++)">
-                  <i class="fa fa-angle-left"></i> [백준] 3273 두 수의 합 (C++)
+                <a href="/2025/04/23/17611/" rel="prev" title="[백준] 17611 직각다각형 (C++)">
+                  <i class="fa fa-angle-left"></i> [백준] 17611 직각다각형 (C++)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/10/28/1944/" rel="next" title="[백준] 1944 복제 로봇 (C++)">
-                  [백준] 1944 복제 로봇 (C++) <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
