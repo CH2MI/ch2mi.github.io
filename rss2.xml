@@ -9,8 +9,37 @@
     <atom:link href="https://ch2mi.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 16 May 2025 15:17:46 GMT</pubDate>
+    <pubDate>Mon, 02 Jun 2025 02:48:57 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[백준] 28426 더하기와 나누기</title>
+      <link>https://ch2mi.github.io/2025/06/02/28426/</link>
+      <guid>https://ch2mi.github.io/2025/06/02/28426/</guid>
+      <pubDate>Mon, 02 Jun 2025 02:28:48 GMT</pubDate>
+      
+      <description>&lt;p&gt;문제 링크 : &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS8yODQyNg==&quot;&gt;https://www.acmicpc.net/problem/28426&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>문제 링크 : <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS8yODQyNg==">https://www.acmicpc.net/problem/28426<i class="fa fa-external-link-alt"></i></span></p><span id="more"></span><h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>수열의 원소 중에서 1개만 수열의 합의 약수가 되어야 한다. 그래서 처음 원소를 약수로 고정하고 원소들을 추가할 때 추가한 원소가 약수가 되지 않으면서 첫 원소가 약수가 되도록 추가하면 될 것이라 생각했다.</p><p>홀수와 짝수의 개념을 떠올리면 이를 쉽게 구현할 수 있다.</p><p>시작 수를 홀수로 놓고 계속해서 짝수를 더한다면 합은 항상 홀수이므로 시작 원소를 제외한 나머지 원소들은 약수가 되지 않는다. 이때 합이 계속해서 시작 수의 약수가 되어야 하는데 이를 만족하는 숫자를 찾아보면 3과 6의 배수가 있다.</p><p>시작 수를 3으로 놓고 6의 배수들을 더하면 합이 항상 홀수이면서 3의 배수이기 때문에 6의 배수들이 약수가 될 수 없어 문제의 조건을 만족한다.</p><p>$N \geq 1$ 이므로 처음 3을 출력하고 남은 횟수만큼 6의 배수를 출력해주면 된다. </p><h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> N; cin &gt;&gt; N;</span><br><span class="line">    cout &lt;&lt; <span class="number">3</span> &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N; i++) cout &lt;&lt; i * <span class="number">6</span> &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/../image/28426/img.png" alt="img.png"></p><p>다양한 풀이가 존재하는 문제다.</p><p>2와 4의 배수를 활용하면 짝수만 사용해서도 문제를 해결할 수 있다!</p>]]></content:encoded>
+      
+      
+      <category domain="https://ch2mi.github.io/categories/Algorithm/">Algorithm</category>
+      
+      <category domain="https://ch2mi.github.io/categories/Algorithm/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      
+      <category domain="https://ch2mi.github.io/tags/Constructive/">Constructive</category>
+      
+      <category domain="https://ch2mi.github.io/tags/Mathematics/">Mathematics</category>
+      
+      <category domain="https://ch2mi.github.io/tags/Number-Theory/">Number Theory</category>
+      
+      
+      <comments>https://ch2mi.github.io/2025/06/02/28426/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>[백준] 20160 야쿠르트 아줌마 야쿠르트 주세요 (C++)</title>
