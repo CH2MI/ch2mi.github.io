@@ -9,7 +9,7 @@
     <atom:link href="https://ch2mi.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 15 Jun 2025 05:30:55 GMT</pubDate>
+    <pubDate>Sun, 15 Jun 2025 05:37:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -29,6 +29,10 @@
       
       <category domain="https://ch2mi.github.io/categories/Algorithm/%EB%B0%B1%EC%A4%80/">백준</category>
       
+      
+      <category domain="https://ch2mi.github.io/tags/Geometry/">Geometry</category>
+      
+      <category domain="https://ch2mi.github.io/tags/Greedy/">Greedy</category>
       
       
       <comments>https://ch2mi.github.io/2025/06/15/17371/#disqus_thread</comments>
