@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -156,6 +156,134 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2024/12/25/24235/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/12/25/24235/" class="post-title-link" itemprop="url">[백준] 24235 유산 (C++)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2024-12-25 19:37:32 / Updated at: 21:35:26" itemprop="dateCreated datePublished" datetime="2024-12-25T19:37:32+09:00">2024-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/12/25/24235/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/25/24235/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>원문 링크 : <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS8yNDIzNQ==">https://www.acmicpc.net/problem/24235<i class="fa fa-external-link-alt"></i></span></p>
+<p>조상때부터 대대로 물려받던 땅이 있다. 땅이 매우 크기 때문에<br>$N$개 위치를 좌표평면 위에 점으로 표시를 해놓았다. 땅은<br>$N$개의 점을 모두 포함하는 가장 작은 볼록다각형이다.</p>
+<p>이 땅을 두 명한테 나눠주려고 한다. 나눠주는 땅의 넓이가 같도록 해야 싸움이 일어나지 않을 것이기 때문에<br>$y$축이랑 평행한 직선 $x &#x3D; a$를 그어 나눠지는 두 땅의 넓이가 같도록 하려고 한다.</p>
+<p>[그림 1]처럼 좌표평면에 9개 점이 존재한다고 가정해보자.</p>
+<p><img src="/image/24235/img.png" alt="img.png"></p>
+<div style="text-align: center;">
+
+<p>[그림 1] 9개의 점을 좌표평면에 표시</p>
+</div>  
+
+<p>땅을 표시하는 좌표평면 정보에서 땅은 9개의 점을 모두 포함하는 가장 작은 볼록다각형이기 때문에 [그림 2]와 같다.</p>
+<p><img src="/image/24235/img_1.png" alt="img_1.png"></p>
+<div style="text-align: center;">
+
+<p>[그림 2] 좌표평면에 땅에 해당하는 부분 표시</p>
+</div>  
+
+<p>두 명이 이 땅을 넓이가 같도록 나눠야 하기 때문에 [그림 3]처럼 직선을 그어 두 땅의 넓이가 같도록 구분하면 된다.</p>
+<p><img src="/image/24235/img_2.png" alt="img_2.png"></p>
+<div style="text-align: center;"> 
+
+<p>[그림 3] 두 땅의 넓이가 같도록 $x &#x3D; a$ 직선으로 구분 </p>
+</div>  
+
+<p>땅의 정보가 주어졌을 때 같은 면적의 땅을 나눌 수 있도록 $a$의 값을 찾아주자.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/12/25/24235/#more" rel="contents">
+                더 읽어보기 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="지난 글 이후로 겨울 동안 코드포스를 조금씩 했었는데 민트를 찍자마자 다시 떨어졌다. 그 뒤로 더 떨어질 것 같다는 생각에 한동안 하지 않았다.  막연하게 코드포스 블루를 언제 다시 도전할지 생각만 하고 있을 때쯤 이번 라운드가 18시 05분 시작이었다. 종강도 했고 잃어버린 감각을 되찾다는 느낌으로 2솔을 목표로 이번 라운드에 참가했다.   Contest">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Codeforces] Codeforces Round 1031 (Div. 2) 후기">
+<meta property="og:url" content="https://ch2mi.github.io/2025/06/18/codeforces-1031/index.html">
+<meta property="og:site_name" content="CH2MI LOG">
+<meta property="og:description" content="지난 글 이후로 겨울 동안 코드포스를 조금씩 했었는데 민트를 찍자마자 다시 떨어졌다. 그 뒤로 더 떨어질 것 같다는 생각에 한동안 하지 않았다.  막연하게 코드포스 블루를 언제 다시 도전할지 생각만 하고 있을 때쯤 이번 라운드가 18시 05분 시작이었다. 종강도 했고 잃어버린 감각을 되찾다는 느낌으로 2솔을 목표로 이번 라운드에 참가했다.   Contest">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_1.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_2.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_3.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_4.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_5.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_6.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/codeforces-1031/img_7.png">
+<meta property="article:published_time" content="2025-06-18T01:37:01.000Z">
+<meta property="article:modified_time" content="2025-06-18T14:34:19.246Z">
+<meta property="article:author" content="CH2MI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ch2mi.github.io/image/codeforces-1031/img_1.png">
+
+
+<link rel="canonical" href="https://ch2mi.github.io/2025/06/18/codeforces-1031/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2025/06/18/codeforces-1031/","path":"2025/06/18/codeforces-1031/","title":"[Codeforces] Codeforces Round 1031 (Div. 2) 후기"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Codeforces] Codeforces Round 1031 (Div. 2) 후기 | CH2MI LOG</title>
+  
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="549Puf0O4cSZY_eB0Dn4IJRJJ0sM98reWm1-mcb7oqo" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss2.xml" title="CH2MI LOG" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">CH2MI LOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="검색" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Shashliks"><span class="nav-number">1.</span> <span class="nav-text">A.  Shashliks </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Good-Start"><span class="nav-number">2.</span> <span class="nav-text">B.  Good Start </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Smilo-and-Minecraft"><span class="nav-number">3.</span> <span class="nav-text">C.  Smilo and Minecraft </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Cheater-E-From-Kazan-with-Love-F-Two-Arrays"><span class="nav-number">4.</span> <span class="nav-text">D.  Cheater , E.  From Kazan with Love , F.  Two Arrays </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">5.</span> <span class="nav-text">후기</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CH2MI"
+      src="/images/icon.png">
+  <p class="site-author-name" itemprop="name">CH2MI</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoMm1p" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch2mi"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2025/06/18/codeforces-1031/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Codeforces] Codeforces Round 1031 (Div. 2) 후기 | CH2MI LOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Codeforces] Codeforces Round 1031 (Div. 2) 후기
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2025-06-18 10:37:01 / Updated at: 23:34:19" itemprop="dateCreated datePublished" datetime="2025-06-18T10:37:01+09:00">2025-06-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/06/18/codeforces-1031/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/06/18/codeforces-1031/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a href="/2024/11/18/codeforces-988/">지난 글</a> 이후로 겨울 동안 코드포스를 조금씩 했었는데 민트를 찍자마자 다시 떨어졌다.</p>
+<p>그 뒤로 더 떨어질 것 같다는 생각에 한동안 하지 않았다.</p>
+<p><img src="/../image/codeforces-1031/img_1.png" alt="img_1.png"></p>
+<p>막연하게 코드포스 블루를 언제 다시 도전할지 생각만 하고 있을 때쯤 이번 라운드가 18시 05분 시작이었다.</p>
+<p>종강도 했고 잃어버린 감각을 되찾다는 느낌으로 <strong>2솔</strong>을 목표로 이번 라운드에 참가했다. </p>
+<p><img src="/../image/codeforces-1031/img.png" alt="img.png"></p>
+<p>Contest 링크 : <span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9jb250ZXN0LzIxMTM=">Codeforces Round 1031 (Div. 2)<i class="fa fa-external-link-alt"></i></span></p>
+<span id="more"></span>
+
+<h3 id="A-Shashliks"><a href="#A-Shashliks" class="headerlink" title="A.  Shashliks "></a>A. <span style="color: #00A000"> Shashliks </span></h3><p>한 줄에 $k, a, b, x, y$가 주어진다.</p>
+<p>두가지 요리가 있는데 첫번째 요리는 온도가 $a$ 이상일 때 요리할 수 있고 온도를 $x$만큼 감소시킨다.</p>
+<p>두번째 요리는 온도가 $b$ 이상일 때 요리할 수 있고 온도를 $y$만큼 감소시킨다.</p>
+<p>초기 온도가 $k$도일 때 요리할 수 있는 최대 횟수를 구하는 문제이다.</p>
+<p>요리를 최대한 많이 해야 하므로 온도 감소가 적은 요리를 더 많이 하면 된다.</p>
+<p>따라서 $x$와 $y$를 비교하고 온도 감소가 더 적은 쪽의 요리를 최대한 많이 만든 후 남은 온도로 다른 요리를 하면 된다.</p>
+<p>이때 반복해서 빼기로 연산하면 TLE가 날 수 있기 때문에 나누기로 횟수를 세어주었다.</p>
+<details>
+<summary>코드 보기</summary>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> k, a, b, x, y;</span><br><span class="line">    cin &gt;&gt; k &gt;&gt; a &gt;&gt; b &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt;= a) &#123;</span><br><span class="line">            <span class="type">int</span> t = (k - a) / x;</span><br><span class="line">            cnt += t + <span class="number">1</span>;</span><br><span class="line">            k -= (t + <span class="number">1</span>) * x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &gt;= b) &#123;</span><br><span class="line">            <span class="type">int</span> t = (k - b) / y;</span><br><span class="line">            cnt += t + <span class="number">1</span>;</span><br><span class="line">            k -= (t + <span class="number">1</span>) * y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt;= b) &#123;</span><br><span class="line">            <span class="type">int</span> t = (k - b) / y;</span><br><span class="line">            cnt += t + <span class="number">1</span>;</span><br><span class="line">            k -= (t + <span class="number">1</span>) * y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (k &gt;= a) &#123;</span><br><span class="line">            <span class="type">int</span> t = (k - a) / x;</span><br><span class="line">            cnt += t + <span class="number">1</span>;</span><br><span class="line">            k -= (t + <span class="number">1</span>) * x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; cnt &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h3 id="B-Good-Start"><a href="#B-Good-Start" class="headerlink" title="B.  Good Start "></a>B. <span style="color: #00A000"> Good Start </span></h3><p>$w * h$ 크기의 직사각형과 $a * b$ 크기의 직사각형이 주어지고 $a * b$ 직사각형 2개의 좌표가 주어진다.</p>
+<p>$a * b$ 직사각형들로 $w * h$ 직사각형을 빈틈없이 덮어야 하는데 $a * b$ 직사각형을 회전시키면 안되고, 다른 $a * b$ 직사각형과 겹치게 놓으면 안된다.</p>
+<p>이미 놓여진 2개의 $a * b$ 직사각형의 위치는 고정일 때 $a * b$ 직사각형을 더 추가해서 $w * h$를 덮을 수 있는지 판단하는 문제이다.</p>
+<p>아래 그림을 보면 빨간색 직사각형이 이미 놓여진 $a * b$ 직사각형이고 여러 개를 더 추가하여 $w * h$ 직사각형을 다 덮었다.</p>
+<p><img src="/../image/codeforces-1031/img_2.png" alt="img_2.png"></p>
+<p>하지만 이 경우에는 어떠한 방법으로도 덮을 수 있는 방법이 없다.</p>
+<p><img src="/../image/codeforces-1031/img_3.png" alt="img_3.png"></p>
+<p>$w * h$ 직사각형을 다 덮기 위해서는 두 직사각형 사이의 간격이 변의 길이의 배수가 되어야 한다. </p>
+<p>회전할 수 없기 때문에 두 직사각형의 $x$좌표 차이가 $a$의 배수이거나 $y$좌표 차이가 $b$의 배수여야 한다.</p>
+<p>만약 둘다 배수가 아니면 덮을 수 없지만 하나라도 맞으면 덮을 수 있다.</p>
+<p>다만 한 방향으로 좌표 차이가 0일 때는 다른 쪽이 배수이어야 덮을 수 있다. </p>
+<p>그래서 두 직사각형 위치에 따라 경우의 수를 나누어 배수 판별을 해주면 된다.</p>
+<details>
+<summary>코드 보기</summary>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> w, h, a, b, x1, y1, x2, y2;</span><br><span class="line">    cin &gt;&gt; w &gt;&gt; h &gt;&gt; a &gt;&gt; b &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (x1 &lt; x2) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y1 &lt; y2) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((y2 - (y1 + b)) % b &amp;&amp; (x2 - (x1 + a)) % a) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (y2 &lt; y1) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((y1 - (y2 + b)) % b &amp;&amp; (x2 - (x1 + a)) % a) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> ((x2 - (x1 + a)) % a) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x2 &lt; x1)&#123;</span><br><span class="line">        <span class="keyword">if</span> (y1 &lt; y2) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((y2 - (y1 + b)) % b &amp;&amp; (x1 - (x2 + a)) % a) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (y2 &lt; y1) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((y1 - (y2 + b)) % b &amp;&amp; (x1 - (x2 + a)) % a) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> ((x1 - (x2 + a)) % a) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (y1 &lt; y2) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((y2 - (y1 + b)) % b) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (y2 &lt; y1) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((y1 - (y2 + b)) % b) cout &lt;&lt; <span class="string">&quot;NO&quot;</span>;</span><br><span class="line">            <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<p>4번 WA가 나왔는데 else if에서 조건문을 보면 괄호가 하나 비어 있어서 틀린 것이다.</p>
+<p><img src="/../image/codeforces-1031/img_4.png" alt="img_4.png"></p>
+<p>저 부분을 눈치채지 못해서 계속해서 WA가 나와 맞왜틀을 외치다가 겨우 발견했다.</p>
+<p>그런데 <code>(y2 - (y1 + b)) % b</code>는 사실 <code>(y2 - y1) % b</code>와 동일한 식이다.</p>
+<p>긴장해서 그런지 복잡하게 생각해서 앞의 식으로 사용했는데 라운드 끝나고 에디토티얼을 보면서 복잡하게 생각했다는 것을 깨달았다.</p>
+<p>처음부터 저렇게 조건문을 구성했다면 WA가 4번 나오지 않았을 것이다…</p>
+<h3 id="C-Smilo-and-Minecraft"><a href="#C-Smilo-and-Minecraft" class="headerlink" title="C.  Smilo and Minecraft "></a>C. <span style="color: #00A000"> Smilo and Minecraft </span></h3><p>$n * m$크기에 빈 땅, 돌, 금이 있다.</p>
+<p>빈 땅에 TNT을 놓아 터트릴 수 있는데 TNT를 중심으로 한 변의 길이가 $2K - 1$인 정사각형 내부에 있는 모든 곳을 빈 땅으로 만들어 버린다.</p>
+<p>그리고 폭발의 범위와 맞닿아 있는 부분의 금을 가져갈 수 있다.</p>
+<p>아래 예시를 보면 TNT의 폭발력이 2일 때 폭발이 만드는 정사각형 길이는 3이 되고 두번째에서 그림에서 이와 맞닿아 있는 부분의 금 2개를 가져갈 수 있다.</p>
+<p>이후 TNT를 한번 더 터트려 남은 금 2개도 가져갈 수 있다.</p>
+<p><img src="/../image/codeforces-1031/img_5.png" alt="img_5.png"></p>
+<p>TNT를 여러번 터트릴 수 있을 때 최대한 많이 금을 몇 개 가져가야 하는지 구해야 한다.</p>
+<p>처음에 든 생각은 백트래킹으로는 절대 풀 수가 없는데 어떻게 접근할지 의문이 들었다.</p>
+<p>그래서 저 사진 처럼 직사각형의 꼭짓점 근처부터 터트리면 최대한 손실 없이 가져갈 수 있다고 생각했는데 꼭짓점 쪽에 빈 칸이 없으면 이 방법도 무용지물이다.</p>
+<p>여기서 떠오른 것은 처음 폭발을 일으키면 외곽부분의 금을 모두 회수하기 때문에 그 다음부터는 외곽부분이 폭발 범위에 있어도 괜찮다는 것이다.</p>
+<p>즉 처음 폭발 때 금을 최소한으로 잃으면 남아있는 금을 모두 가져갈 수 있다.</p>
+<p>따라서 빈 칸에 TNT를 한 번씩 놓아보면서 몇 개 잃는 지 계산한 후 <code>전체 금의 개수 - 최소로 잃는 금의 개수</code>를 계산하면 된다.</p>
+<p>$k$의 범위가 $(1 \leq k \leq 500)$이므로 매 위치마다 주변을 탐색하긴 힘들기 때문에 2차원 누적합을 활용해 미리 금의 개수를 미리 저장해 놓고 매 위치마다 계산하면 된다.</p>
+<p>정리해보면 </p>
+<ol>
+<li>2차원 누적합으로 금의 개수를 저장한다.</li>
+<li>빈칸을 돌면서 TNT로 잃는 금의 최솟값을 계산한다.</li>
+<li>전체 금의 개수에서 최솟값을 빼어 최대로 얻을 수 있는 금의 개수를 계산한다.</li>
+</ol>
+<details>
+<summary>코드 보기</summary>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m, k;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">v</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; s : v) cin &gt;&gt; s;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">ps</span>(n + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(m + <span class="number">1</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 금의 개수를 누적합으로 저장</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">            ps[i][j] = (v[i - <span class="number">1</span>][j - <span class="number">1</span>] == <span class="string">&#x27;g&#x27;</span>) + ps[i - <span class="number">1</span>][j] + ps[i][j - <span class="number">1</span>] - ps[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">            cnt += v[i - <span class="number">1</span>][j - <span class="number">1</span>] == <span class="string">&#x27;g&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> mn = n * m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 각 빈 칸에서 TNT를 터트렸을 때 금을 몇 개 잃는지 계산하고 최솟값을 저장</span></span><br><span class="line">            <span class="keyword">if</span> (v[i][j] == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                <span class="type">int</span> x1 = <span class="built_in">max</span>(<span class="number">0</span>, i - k + <span class="number">1</span>) + <span class="number">1</span>, y1 = <span class="built_in">max</span>(<span class="number">0</span>, j - k + <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">                <span class="type">int</span> x2 = <span class="built_in">min</span>(n - <span class="number">1</span>, i + k - <span class="number">1</span>) + <span class="number">1</span>, y2 = <span class="built_in">min</span>(m - <span class="number">1</span>, j + k - <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">                mn = <span class="built_in">min</span>(mn, ps[x2][y2] - ps[x1 - <span class="number">1</span>][y2] - ps[x2][y1 - <span class="number">1</span>] + ps[x1 - <span class="number">1</span>][y1 - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; cnt - mn &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> T; cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+
+<p>평소 배열 저장은 <code>0-base</code>로 하고 누적합은 <code>1-base</code>로 하다보니 이를 변환할 때 머리가 꼬여서 제대로 계산이 되지 않았다.</p>
+<p>이 부분에서 디버깅만 30분 걸린 것 같다. 그래서 시간이 점점 줄어들수록 초조해졌는데 다행히 풀 수 있었다.</p>
+<h3 id="D-Cheater-E-From-Kazan-with-Love-F-Two-Arrays"><a href="#D-Cheater-E-From-Kazan-with-Love-F-Two-Arrays" class="headerlink" title="D.  Cheater , E.  From Kazan with Love , F.  Two Arrays "></a>D. <span style="color: #808080"> Cheater </span>, E. <span style="color: #808080"> From Kazan with Love </span>, F. <span style="color: #808080"> Two Arrays </span></h3><p>C번을 푼 시점에서 8분 정도 남아 있어서 라운드를 마무리 했다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/../image/codeforces-1031/img_6.png" alt="img_6.png"><br>원래 목표가 2문제였는데 3문제를 풀었다.</p>
+<p>B번에서 WA만 4번 나올 때 오늘 라운드도 점수가 떨어지겠다 싶었는데 다행히 C번을 풀어 점수가 올랐다.</p>
+<p>B번에서 괄호만 잘 봤으면 점수가 훨씬 더 좋았을 것 같다.</p>
+<p>그리고 이번 라운드를 통해 무사히 민트를 복구했다.</p>
+<p><img src="/../image/codeforces-1031/img_7.png" alt="img_7.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/06/17/7682/" rel="prev" title="[백준] 7682 틱택토 (C++)">
+                  <i class="fa fa-angle-left"></i> [백준] 7682 틱택토 (C++)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">CH2MI</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"CH2MILOG","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
