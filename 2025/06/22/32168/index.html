@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ch2mi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="문제 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;32168">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[백준] 32168 완전 이진 트리와 쿼리">
+<meta property="og:url" content="https://ch2mi.github.io/2025/06/22/32168/index.html">
+<meta property="og:site_name" content="CH2MI LOG">
+<meta property="og:description" content="문제 링크 : https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;32168">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://ch2mi.github.io/image/32168/img.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/32168/img_1.png">
+<meta property="og:image" content="https://ch2mi.github.io/image/32168/img_2.png">
+<meta property="article:published_time" content="2025-06-22T08:43:17.000Z">
+<meta property="article:modified_time" content="2025-06-22T10:22:58.115Z">
+<meta property="article:author" content="CH2MI">
+<meta property="article:tag" content="Mathematics">
+<meta property="article:tag" content="Tree">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ch2mi.github.io/image/32168/img.png">
+
+
+<link rel="canonical" href="https://ch2mi.github.io/2025/06/22/32168/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"https://ch2mi.github.io/2025/06/22/32168/","path":"2025/06/22/32168/","title":"[백준] 32168 완전 이진 트리와 쿼리"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[백준] 32168 완전 이진 트리와 쿼리 | CH2MI LOG</title>
+  
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="549Puf0O4cSZY_eB0Dn4IJRJJ0sM98reWm1-mcb7oqo">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/rss2.xml" title="CH2MI LOG" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">CH2MI LOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="검색" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%92%80%EC%9D%B4-%EB%B0%8F-%EA%B5%AC%ED%98%84"><span class="nav-number">1.</span> <span class="nav-text">풀이 및 구현</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%BD%94%EB%93%9C"><span class="nav-number">2.</span> <span class="nav-text">코드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9B%84%EA%B8%B0"><span class="nav-number">3.</span> <span class="nav-text">후기</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CH2MI" src="/images/icon.png">
+  <p class="site-author-name" itemprop="name">CH2MI</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoMm1p" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ch2mi"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://ch2mi.github.io/2025/06/22/32168/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="CH2MI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CH2MI LOG">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[백준] 32168 완전 이진 트리와 쿼리 | CH2MI LOG">
+      <meta itemprop="description" content>
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [백준] 32168 완전 이진 트리와 쿼리
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2025-06-22 17:43:17 / Updated at: 19:22:58" itemprop="dateCreated datePublished" datetime="2025-06-22T17:43:17+09:00">2025-06-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Algorithm/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/06/22/32168/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/06/22/32168/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>문제 링크 : <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWNtaWNwYy5uZXQvcHJvYmxlbS8zMjE2OA==">https://www.acmicpc.net/problem/32168<i class="fa fa-external-link-alt"></i></span></p>
+<span id="more"></span>
+
+<h3 id="풀이-및-구현"><a href="#풀이-및-구현" class="headerlink" title="풀이 및 구현"></a>풀이 및 구현</h3><p>1번 정점이 루트인 완전 이진 트리에서 두가지 쿼리를 처리해야 한다.</p>
+<ol>
+<li>트리의 루트를 v로 바꾸기</li>
+<li>현재 트리에서 v정점 서브 트리에 있는 모든 정점 번호의 합을 출력하기</li>
+</ol>
+<p>정점의 개수가 $(1 \leq N \leq 10^9)$ 이기 때문에 탐색으로는 풀 수 없다.</p>
+<p>그래서 정점이 바뀔 때 트리에서 일어나는 일을 관찰해보았다.</p>
+<p><img src="/../image/32168/img.png" alt="img.png"></p>
+<p>루트가 1일 때 완전 이진 트리와 루트를 9로 바꿨을 때 완전 이진 트리이다.</p>
+<p>이때 서브 트리가 바뀐 정점들을 찾아보면 <code>1번 정점</code>, <code>2번 정점</code>, <code>4번 정점</code> 그리고 <code>9번 정점</code>이다.</p>
+<p>4개 정점의 공통점은 루트가 1인 완전 이진 트리에서 <code>9번 정점</code>을 서브 트리에 포함하고 있는 정점들이다.</p>
+<p>이를 일반화 하면 <code>v정점</code>의 서브 트리의 합이 바뀌는 경우는 현재 트리의 <code>루트 정점</code>이 원래 <code>v정점</code>의 서브 트리에 포함되어 있는 경우이다.</p>
+<p>그래서 2번 쿼리가 들어오면 현재 <code>루트 정점</code>과 <code>v정점</code>가 원래 완전 이진 트리에서 어떤 관계를 가졌는지 확인하고 그에 맞게 합을 계산하면 된다.</p>
+<p>경우의 수는 총 4가지가 나온다.</p>
+<ol>
+<li><code>루트 정점</code>이 <code>v정점</code> 기존의 서브 트리에 포함되지 않을 때<ul>
+<li>서브 트리에 변화가 없으므로 그냥 합을 구하면 된다.</li>
+</ul>
+</li>
+<li><code>루트 정점</code>이 <code>v정점</code> 기존의 왼쪽 서브 트리에 포함 될 때<ul>
+<li><code>2번 노드</code>의 경우이다. <code>전체 정점 번호의 합 - 왼쪽 서브 트리 정점 번호의 합</code>으로 구할 수 있다.</li>
+</ul>
+</li>
+<li><code>루트 정점</code>이 <code>v정점</code> 기존의 오른쪽 서브 트리에 포함될 때<ul>
+<li><code>4번 노드</code>의 경우이다. <code>전체 정점 번호의 합 - 오른쪽 서브 트리 정점 번호의 합</code>으로 구할 수 있다.</li>
+</ul>
+</li>
+<li><code>루트 정점</code>과 <code>v정점</code>이 동일 할 때<ul>
+<li>전체 노드의 합을 구하면 된다.</li>
+</ul>
+</li>
+</ol>
+<p>이를 구현하기 위해 우선 <code>v정점</code> 서브 트리의 합을 구하는 코드를 만들었다.</p>
+<p>$x$번 정점이 $\lfloor \frac x2 \rfloor$번 정점을 부모로 가지므로 이 규칙을 활용해 합을 쉽게 구할 수 있다.</p>
+<p>왼쪽은 항상 번호가 2배가 되고 오른쪽의 번호는 항상 2배 + 1로 커진다.</p>
+<p>또한 같은 높이에서는 정점의 번호가 연속되므로 양 끝을 범위 합을 이용해 한 높이씩 훑어 가면 된다.</p>
+<p>완전 이진 트리의 높이는 $log_2{N}$ 이므로 연산마다 최대 30번정도 훑어 매번 계산해도 상관없다.</p>
+<p><code>2번 정점</code>의 서브 트리를 구할 때는 아래 그림처럼 구하게 된다.</p>
+<p><img src="/../image/32168/img_1.png" alt="img_1.png"></p>
+<p>이를 함수로 구현해서 사용했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">get_sum</span><span class="params">(<span class="type">long</span> <span class="type">long</span> N, <span class="type">long</span> <span class="type">long</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 범위를 벗어난 입력이 들어올 때</span></span><br><span class="line">    <span class="keyword">if</span> (v &gt; N) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 자신도 포함한다.</span></span><br><span class="line">    <span class="keyword">auto</span> sum = v;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 서브 트리의 양 끝 값을 계산</span></span><br><span class="line">    <span class="keyword">auto</span> l = v &lt;&lt; <span class="number">1</span>, r = (v &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 전체 노드의 범위동안만 계산 </span></span><br><span class="line">    <span class="keyword">while</span> (l &lt;= N) &#123;</span><br><span class="line">        <span class="comment">// 오른쪽 노드가 범위를 벗어날 수 있으므로 보정</span></span><br><span class="line">        r = <span class="built_in">min</span>(r, N);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 범위 합</span></span><br><span class="line">        sum += (r - l + <span class="number">1</span>) * (r + l) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 한 칸 내려간다.</span></span><br><span class="line">        l = l &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        r = (r &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>다음은 두 정점의 관계를 계산하는 함수를 만들었다.</p>
+<p>서브 트리가 바뀌는 경우인 현재 트리의 <code>루트 정점</code>이 원래 <code>v정점</code>의 서브 트리에 포함되어 있는 경우를 찾아야 하므로 <code>루트 정점</code>을 점점 올리면서 <code>v정점</code>과 만나는 경우가 있는지 확인했다.</p>
+<p>4가지 경우의 수가 있으므로 각 경우마다 다른 값을 리턴해주었다.</p>
+<ul>
+<li><code>0</code>: <code>v정점</code>을 만나지 않은 경우 서브 트리에 포함되지 않는다.</li>
+<li><code>1</code>: 왼쪽 서브 트리에 포함된 경우</li>
+<li><code>2</code>: 오른쪽 서브 트리에 포함된 경우</li>
+<li><code>3</code>: <code>루트 정점</code>과 <code>v정점</code>이 동일한 경우</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">long</span> <span class="type">long</span> r, <span class="type">long</span> <span class="type">long</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r == v) <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">while</span> (r &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (r &gt;&gt; <span class="number">1</span> == v) <span class="keyword">return</span> r % <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        r &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1번 쿼리가 들어오면 현재 루트의 번호만 저장하고 2번 쿼리가 들어오면 find 함수를 이용해 관계를 알아낸 뒤 경우의 수에 따라 처리하면 된다.</p>
+<p>전체 합은 미리 <code>sum</code> 변수에 1번 정점의 서브 트리 합으로 구해 놓고 사용했다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 전체 합</span></span><br><span class="line"><span class="keyword">auto</span> sum = <span class="built_in">get_sum</span>(N, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 현재 루트의 번호</span></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> root = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">    <span class="type">int</span> q, v; cin &gt;&gt; q &gt;&gt; v;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 1번 쿼리에서는 루트만 변경한다.</span></span><br><span class="line">    <span class="keyword">if</span> (q == <span class="number">1</span>) &#123;</span><br><span class="line">        root = v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// 루트 정점과 v정점의 관계를 확인하고 각 경우에 따라 처리한다.</span></span><br><span class="line">        <span class="type">int</span> result = <span class="built_in">find</span>(root, v);</span><br><span class="line">        <span class="keyword">if</span> (!result) cout &lt;&lt; <span class="built_in">get_sum</span>(N, v) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">1</span>) &#123;</span><br><span class="line">            cout &lt;&lt; sum - <span class="built_in">get_sum</span>(N, v * <span class="number">2</span>) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">2</span>) &#123;</span><br><span class="line">            cout &lt;&lt; sum - <span class="built_in">get_sum</span>(N, v * <span class="number">2</span> + <span class="number">1</span>) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            cout &lt;&lt; sum &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">get_sum</span><span class="params">(<span class="type">long</span> <span class="type">long</span> N, <span class="type">long</span> <span class="type">long</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (v &gt; N) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">auto</span> sum = v;</span><br><span class="line">    <span class="keyword">auto</span> l = v &lt;&lt; <span class="number">1</span>, r = (v &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= N) &#123;</span><br><span class="line">        r = <span class="built_in">min</span>(r, N);</span><br><span class="line">        sum += (r - l + <span class="number">1</span>) * (r + l) / <span class="number">2</span>;</span><br><span class="line">        l = l &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        r = (r &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">long</span> <span class="type">long</span> r, <span class="type">long</span> <span class="type">long</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r == v) <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">while</span> (r &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (r &gt;&gt; <span class="number">1</span> == v) <span class="keyword">return</span> r % <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        r &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>)-&gt;<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> N, M;</span><br><span class="line">    cin &gt;&gt; N &gt;&gt; M;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> sum = <span class="built_in">get_sum</span>(N, <span class="number">1</span>);</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> root = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">        <span class="type">int</span> q, v; cin &gt;&gt; q &gt;&gt; v;</span><br><span class="line">        <span class="keyword">if</span> (q == <span class="number">1</span>) &#123;</span><br><span class="line">            root = v;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> result = <span class="built_in">find</span>(root, v);</span><br><span class="line">            <span class="keyword">if</span> (!result) cout &lt;&lt; <span class="built_in">get_sum</span>(N, v) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">1</span>) &#123;</span><br><span class="line">                cout &lt;&lt; sum - <span class="built_in">get_sum</span>(N, v * <span class="number">2</span>) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">2</span>) &#123;</span><br><span class="line">                cout &lt;&lt; sum - <span class="built_in">get_sum</span>(N, v * <span class="number">2</span> + <span class="number">1</span>) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                cout &lt;&lt; sum &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p><img src="/../image/32168/img_2.png" alt="img_2.png"></p>
+<p>4번째 경우인 루트 &#x3D; v 경우를 잘못 처리해서 3번이나 틀렸다. </p>
+<p>처음엔 그냥 4번째 경우를 1번째 경우와 동일하게 처리했다. 그래서 처음 틀렸을 때 오버플로우 문제인가 하면서 다른 곳들을 고쳤어서 2번을 더 틀렸었다.</p>
+<p>그런데 다시 생각해 보니 동일하면 전체 합을 출력해야 한다는 것을 깨달아 맞출 수 있었다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Mathematics/" rel="tag"># Mathematics</a>
+              <a href="/tags/Tree/" rel="tag"># Tree</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/06/18/codeforces-1031/" rel="prev" title="[Codeforces] Codeforces Round 1031 (Div. 2) 후기">
+                  <i class="fa fa-angle-left"></i> [Codeforces] Codeforces Round 1031 (Div. 2) 후기
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">CH2MI</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"CH2MILOG","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
